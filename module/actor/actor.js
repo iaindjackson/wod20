@@ -65,8 +65,8 @@ export class VampireActor extends Actor {
       hasFolders: folders.length > 1,
       type: data.type || types[0],
       types: types.reduce((obj, t) => {
-        const VTM5ELabel = 'VTM5E.' + t[0].toUpperCase() + t.substring(1)
-        obj[t] = game.i18n.has(VTM5ELabel) ? game.i18n.localize(VTM5ELabel) : t
+        const WOD20Label = 'WOD20.' + t[0].toUpperCase() + t.substring(1)
+        obj[t] = game.i18n.has(WOD20Label) ? game.i18n.localize(WOD20Label) : t
         return obj
       }, {}),
       hasTypes: types.length > 1

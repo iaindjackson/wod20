@@ -1,13 +1,13 @@
 <div class="tab combat" data-group="primary" data-tab="combat">
   <table>
     <tr>
-      <th>{{ localize "VTM5E.Weapon"}}</th>
-      <th>{{ localize "VTM5E.Diff"}}</th>
-      <th>{{ localize "VTM5E.Damage"}}</th>
-      <th>{{ localize "VTM5E.Range"}}</th>
-      <th>{{ localize "VTM5E.Rate"}}</th>
-      <th>{{ localize "VTM5E.Clip"}}</th>
-      <th>{{ localize "VTM5E.Conceal"}}</th>
+      <th>{{ localize "WOD20.Weapon"}}</th>
+      <th>{{ localize "WOD20.Diff"}}</th>
+      <th>{{ localize "WOD20.Damage"}}</th>
+      <th>{{ localize "WOD20.Range"}}</th>
+      <th>{{ localize "WOD20.Rate"}}</th>
+      <th>{{ localize "WOD20.Clip"}}</th>
+      <th>{{ localize "WOD20.Conceal"}}</th>
     </tr>
     {{#each data.data.weapons}}
     <tr>
@@ -16,7 +16,7 @@
           name="data.weapons.{{@key}}.attack"
           type="text"
           value="{{this.attack}}"
-          placeholder="{{localize 'VTM5E.Weapon'}}"
+          placeholder="{{localize 'WOD20.Weapon'}}"
         />
       </td>
       <td>
@@ -24,7 +24,7 @@
           name="data.weapons.{{@key}}.diff"
           type="text"
           value="{{this.diff}}"
-          placeholder="{{localize 'VTM5E.Diff'}}"
+          placeholder="{{localize 'WOD20.Diff'}}"
         />
       </td>
       <td>
@@ -32,7 +32,7 @@
           name="data.weapons.{{@key}}.damage"
           type="text"
           value="{{this.damage}}"
-          placeholder="{{localize 'VTM5E.Damage'}}"
+          placeholder="{{localize 'WOD20.Damage'}}"
         />
       </td>
       <td>
@@ -40,7 +40,7 @@
           name="data.weapons.{{@key}}.range"
           type="text"
           value="{{this.range}}"
-          placeholder="{{localize 'VTM5E.Range'}}"
+          placeholder="{{localize 'WOD20.Range'}}"
         />
       </td>
       <td>
@@ -48,7 +48,7 @@
           name="data.weapons.{{@key}}.rate"
           type="text"
           value="{{this.rate}}"
-          placeholder="{{localize 'VTM5E.Rate'}}"
+          placeholder="{{localize 'WOD20.Rate'}}"
         />
       </td>
       <td>
@@ -56,7 +56,7 @@
           name="data.weapons.{{@key}}.clip"
           type="text"
           value="{{this.clip}}"
-          placeholder="{{localize 'VTM5E.Clip'}}"
+          placeholder="{{localize 'WOD20.Clip'}}"
         />
       </td>
       <td>
@@ -64,37 +64,37 @@
           name="data.weapons.{{@key}}.conceal"
           type="text"
           value="{{this.conceal}}"
-          placeholder="{{localize 'VTM5E.Conceal'}}"
+          placeholder="{{localize 'WOD20.Conceal'}}"
         />
       </td>
     </tr>
     {{/each}}
   </table>
   <div> 
-  <h1> {{localize "VTM5E.Armor"}} </h1>
+  <h1> {{localize "WOD20.Armor"}} </h1>
   <input
           name="data.armor.class"
           type="text"
           value="{{data.data.armor.class}}"
-          placeholder="{{localize 'VTM5E.Class'}}"
+          placeholder="{{localize 'WOD20.Class'}}"
   />
   <input
           name="data.armor.rating"
           type="text"
           value="{{data.data.armor.rating}}"
-          placeholder="{{localize 'VTM5E.Rating'}}"
+          placeholder="{{localize 'WOD20.Rating'}}"
   />
   <input
           name="data.armor.penalty"
           type="text"
           value="{{data.data.armor.penalty}}"
-          placeholder="{{localize 'VTM5E.Penalty'}}"
+          placeholder="{{localize 'WOD20.Penalty'}}"
   />
   <input
           name="data.armor.description"
           type="text"
           value="{{data.data.armor.description}}"
-          placeholder="{{localize 'VTM5E.Description'}}"
+          placeholder="{{localize 'WOD20.Description'}}"
   />
   </div>
 </div>

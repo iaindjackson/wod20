@@ -1,5 +1,5 @@
 <div class="tab flex-center" data-group="primary" data-tab="stats">
-  <label class="resource-label">{{localize "VTM5E.Attributes"}}</label>
+  <label class="resource-label">{{localize "WOD20.Attributes"}}</label>
     {{setVar "generation" data.data.headers.generation}}
     {{#le generation 7}}
       {{setVar "loopLength" 10}}
@@ -40,7 +40,7 @@
     {{/each}}
   </div>
 
-  <label class="resource-label">{{localize "VTM5E.Skills"}}</label>
+  <label class="resource-label">{{localize "WOD20.Skills"}}</label>
   <div class="skills grid grid-{{colNum}}col flex-group-center">
     {{#each data.data.skills as |skill key|}}
     <div>
@@ -74,7 +74,7 @@
     {{/each}}
   </div>
   {{log 'virtue' data.data.virtues }}
-  <label class="resource-label">{{localize "VTM5E.Virtues"}}</label>
+  <label class="resource-label">{{localize "WOD20.Virtues"}}</label>
   <div class="skills grid grid-3col flex-group-center">
     {{#each data.data.virtues as |virtue key|}}
     <div class="skill flexrow flex-center">
@@ -99,18 +99,18 @@
     </div>
     {{/each}}
   </div>
-  <label class="resource-label">{{localize "VTM5E.Specialties"}}</label>
+  <label class="resource-label">{{localize "WOD20.Specialties"}}</label>
   <ol class="items-list flex-left">
     <li class="item flexrow item-header">
       <div class="item-image"></div>
-      <div class="item-name">{{localize "VTM5E.Specialty"}}</div>
-      <div class="item-name">{{localize "VTM5E.Skill"}}</div>
+      <div class="item-name">{{localize "WOD20.Specialty"}}</div>
+      <div class="item-name">{{localize "WOD20.Skill"}}</div>
       <div class="item-controls">
         <a
           class="item-control item-create"
-          title="{{localize 'VTM5E.AddItem'}}"
+          title="{{localize 'WOD20.AddItem'}}"
           data-type="specialty"
-          ><i class="fas fa-plus"></i> {{localize "VTM5E.AddItem"}}
+          ><i class="fas fa-plus"></i> {{localize "WOD20.AddItem"}}
         </a>
       </div>
     </li>
@@ -135,10 +135,10 @@
         {{localize (generateSkillLabel item.data.skill)}}
       </h4>
       <div class="item-controls">
-        <a class="item-control item-edit" title="{{localize 'VTM5E.Edit'}}"
+        <a class="item-control item-edit" title="{{localize 'WOD20.Edit'}}"
           ><i class="fas fa-edit"></i
         ></a>
-        <a class="item-control item-delete" title="{{localize 'VTM5E.Delete'}}"
+        <a class="item-control item-delete" title="{{localize 'WOD20.Delete'}}"
           ><i class="fas fa-trash"></i
         ></a>
       </div>
@@ -146,19 +146,19 @@
     {{/each}}
   </ol>
 
-  <label class="resource-label">{{localize "VTM5E.CustomRolls"}}</label>
+  <label class="resource-label">{{localize "WOD20.CustomRolls"}}</label>
   <ol class="items-list flex-left">
     <li class="item flexrow item-header">
       <div class="item-image"></div>
-      <div class="item-name">{{localize "VTM5E.Name"}}</div>
-      <div class="item-name">{{localize "VTM5E.Attribute"}}</div>
-      <div class="item-name">{{localize "VTM5E.Skill"}}</div>
+      <div class="item-name">{{localize "WOD20.Name"}}</div>
+      <div class="item-name">{{localize "WOD20.Attribute"}}</div>
+      <div class="item-name">{{localize "WOD20.Skill"}}</div>
       <div class="item-controls">
         <a
           class="item-control item-create"
-          title="{{localize 'VTM5E.AddItem'}}"
+          title="{{localize 'WOD20.AddItem'}}"
           data-type="customRoll"
-          ><i class="fas fa-plus"></i> {{localize "VTM5E.AddItem"}}
+          ><i class="fas fa-plus"></i> {{localize "WOD20.AddItem"}}
         </a>
       </div>
     </li>
@@ -186,10 +186,10 @@
         {{localize (generateSkillLabel roll.data.dice2)}}
       </h4>
       <div class="item-controls">
-        <a class="item-control item-edit" title="{{localize 'VTM5E.Edit'}}"
+        <a class="item-control item-edit" title="{{localize 'WOD20.Edit'}}"
           ><i class="fas fa-edit"></i
         ></a>
-        <a class="item-control item-delete" title="{{localize 'VTM5E.Delete'}}"
+        <a class="item-control item-delete" title="{{localize 'WOD20.Delete'}}"
           ><i class="fas fa-trash"></i
         ></a>
       </div>

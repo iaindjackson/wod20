@@ -9,7 +9,7 @@ export class CoterieActorSheet extends ActorSheet {
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ["vtm5e", "sheet", "actor", "coterie"],
+      classes: ["wod20", "sheet", "actor", "coterie"],
       template: "systems/wod20/templates/actor/coterie-sheet.html",
       width: 800,
       height: 700,
@@ -43,7 +43,7 @@ export class CoterieActorSheet extends ActorSheet {
     const data = super.getData();
     data.locked = this.locked;
     data.isCharacter = this.isCharacter;
-    data.sheetType = `${game.i18n.localize("VTM5E.Coterie")}`;
+    data.sheetType = `${game.i18n.localize("WOD20.Coterie")}`;
 
     data.dtypes = ["String", "Number", "Boolean"];
 
@@ -268,12 +268,12 @@ export class CoterieActorSheet extends ActorSheet {
 
   getItemDefaultName(type, data) {
     if (type === "feature") {
-      return `${game.i18n.localize("VTM5E." + data.featuretype.capitalize())}`;
+      return `${game.i18n.localize("WOD20." + data.featuretype.capitalize())}`;
     }
     if (type === "power") {
-      return `${game.i18n.localize("VTM5E." + data.discipline.capitalize())}`;
+      return `${game.i18n.localize("WOD20." + data.discipline.capitalize())}`;
     }
-    return `${game.i18n.localize("VTM5E." + type.capitalize())}`;
+    return `${game.i18n.localize("WOD20." + type.capitalize())}`;
   }
 
   // There's gotta be a better way to do this but for the life of me I can't figure it out

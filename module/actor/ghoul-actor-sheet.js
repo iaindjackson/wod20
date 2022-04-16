@@ -12,7 +12,7 @@ export class GhoulActorSheet extends MortalActorSheet {
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ["vtm5e", "sheet", "actor", "ghoul"],
+      classes: ["wod20", "sheet", "actor", "ghoul"],
       template: "systems/wod20/templates/actor/ghoul-sheet.html",
       width: 800,
       height: 700,
@@ -39,7 +39,7 @@ export class GhoulActorSheet extends MortalActorSheet {
   getData() {
     const data = super.getData();
 
-    data.sheetType = `${game.i18n.localize("VTM5E.Ghoul")}`;
+    data.sheetType = `${game.i18n.localize("WOD20.Ghoul")}`;
 
     // Prepare items.
     if (this.actor.data.type === "ghoul") {
@@ -159,7 +159,7 @@ export class GhoulActorSheet extends MortalActorSheet {
     const template = `
       <form>
           <div class="form-group">
-              <label>${game.i18n.localize("VTM5E.SelectDiscipline")}</label>
+              <label>${game.i18n.localize("WOD20.SelectDiscipline")}</label>
               <select id="disciplineSelect">${options}</select>
           </div>
       </form>`;
@@ -168,7 +168,7 @@ export class GhoulActorSheet extends MortalActorSheet {
     buttons = {
       draw: {
         icon: '<i class="fas fa-check"></i>',
-        label: game.i18n.localize("VTM5E.Add"),
+        label: game.i18n.localize("WOD20.Add"),
         callback: async (html) => {
           const discipline = html.find("#disciplineSelect")[0].value;
           this.actor.update({
@@ -178,12 +178,12 @@ export class GhoulActorSheet extends MortalActorSheet {
       },
       cancel: {
         icon: '<i class="fas fa-times"></i>',
-        label: game.i18n.localize("VTM5E.Cancel"),
+        label: game.i18n.localize("WOD20.Cancel"),
       },
     };
 
     new Dialog({
-      title: game.i18n.localize("VTM5E.AddDiscipline"),
+      title: game.i18n.localize("WOD20.AddDiscipline"),
       content: template,
       buttons: buttons,
       default: "draw",

@@ -13,7 +13,7 @@ export class VampireActorSheet extends GhoulActorSheet {
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ["vtm5e", "sheet", "actor", "vampire"],
+      classes: ["wod20", "sheet", "actor", "vampire"],
       template: "systems/wod20/templates/actor/vampire-sheet.html",
       width: 800,
       height: 700,
@@ -45,7 +45,7 @@ export class VampireActorSheet extends GhoulActorSheet {
   getData() {
     const data = super.getData();
 
-    data.sheetType = `${game.i18n.localize("VTM5E.Vampire")}`;
+    data.sheetType = `${game.i18n.localize("WOD20.Vampire")}`;
 
     // Prepare items.
     if (

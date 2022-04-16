@@ -17,7 +17,7 @@ import { VampireDarkAgesSheet } from "./actor/vampire-da-actor-sheet.js";
 Hooks.once("init", async function () {
   console.log("Initializing Schrecknet...");
 
-  game.settings.register("vtm5e", "worldVersion", {
+  game.settings.register("wod20", "worldVersion", {
     name: "world Version",
     hint: "Automatically upgrades data when the system.json is upgraded.",
     scope: "world",
@@ -26,7 +26,7 @@ Hooks.once("init", async function () {
     type: String,
   });
 
-  game.vtm5e = {
+  game.wod20 = {
     VampireActor,
     VampireItem,
     rollItemMacro,
@@ -49,33 +49,33 @@ Hooks.once("init", async function () {
   // Register sheet application classes
   Actors.unregisterSheet("core", ActorSheet);
 
-  Actors.registerSheet("vtm5e", VampireActorSheet, {
+  Actors.registerSheet("wod20", VampireActorSheet, {
     label: "Vampire Sheet",
     types: ["vampire", "character"],
     makeDefault: true,
   });
-  Actors.registerSheet("vtm5e", VampireDarkAgesSheet, {
+  Actors.registerSheet("wod20", VampireDarkAgesSheet, {
     label: "Vampire Dark Ages Sheet",
     types: ["vampire-da", "character"],
     makeDefault: true,
   });
-  Actors.registerSheet("vtm5e", GhoulActorSheet, {
+  Actors.registerSheet("wod20", GhoulActorSheet, {
     label: "Ghoul Sheet",
     types: ["ghoul"],
     makeDefault: true,
   });
-  Actors.registerSheet("vtm5e", MortalActorSheet, {
+  Actors.registerSheet("wod20", MortalActorSheet, {
     label: "Mortal Sheet",
     types: ["mortal"],
     makeDefault: true,
   });
-  Actors.registerSheet("vtm5e", CoterieActorSheet, {
+  Actors.registerSheet("wod20", CoterieActorSheet, {
     label: "Coterie Sheet",
     types: ["coterie"],
     makeDefault: true,
   });
   Items.unregisterSheet("core", ItemSheet);
-  Items.registerSheet("vtm5e", VampireItemSheet, {
+  Items.registerSheet("wod20", VampireItemSheet, {
     label: "Item Sheet",
     makeDefault: true,
   });
@@ -129,11 +129,11 @@ Hooks.once("init", async function () {
   };
 
   Handlebars.registerHelper("generateFeatureLabel", function (str) {
-    return "VTM5E.".concat(capitalize(str));
+    return "WOD20.".concat(capitalize(str));
   });
 
   Handlebars.registerHelper("generateSkillLabel", function (str) {
-    return "VTM5E.".concat(
+    return "WOD20.".concat(
       str
         .split(" ")
         .flatMap((word) => capitalize(word))
@@ -180,39 +180,39 @@ Hooks.once("init", async function () {
   });
   Handlebars.registerHelper("getDisciplineName", function (key, roll = false) {
     const disciplines = {
-      abombwe: "VTM5E.Abombwe",
-      animalism: "VTM5E.Animalism",
-      auspex: "VTM5E.Auspex",
-      bardo: "VTM5E.Bardo",
-      celerity: "VTM5E.Celerity",
-      chimerstry: "VTM5E.Chimerstry",
-      daimonion: "VTM5E.Daimonion",
-      dementation: "VTM5E.Dementation",
-      dominate: "VTM5E.Dominate",
-      flight: "VTM5E.Flight",
-      fortitude: "VTM5E.Fortitude",
-      melpominee: "VTM5E.Melpominee",
-      mytherceria: "VTM5E.Mytherceria",
-      obeah: "VTM5E.Obeah",
-      obfuscate: "VTM5E.Obfuscate",
-      obtenebration: "VTM5E.Obtenebration",
-      potence: "VTM5E.Potence",
-      presence: "VTM5E.Presence",
-      protean: "VTM5E.Protean",
-      quietus: "VTM5E.Quietus",
-      sanguinus: "VTM5E.Sanguinus",
-      serpentis: "VTM5E.Serpentis",
-      spiritus: "VTM5E.Spiritus",
-      temporis: "VTM5E.Temporis",
-      thanatosis: "VTM5E.Thanatosis",
-      valeren: "VTM5E.Valeren",
-      vicissitude: "VTM5E.Vicissitude",
-      visceratika: "VTM5E.Visceratika",
-      thaumaturgy: "VTM5E.Thaumaturgy",
-      necromancy: "VTM5E.Necromancy",
-      oblivion: "VTM5E.Oblivion",
-      rituals: "VTM5E.Rituals",
-      ceremonies: "VTM5E.Ceremonies",
+      abombwe: "WOD20.Abombwe",
+      animalism: "WOD20.Animalism",
+      auspex: "WOD20.Auspex",
+      bardo: "WOD20.Bardo",
+      celerity: "WOD20.Celerity",
+      chimerstry: "WOD20.Chimerstry",
+      daimonion: "WOD20.Daimonion",
+      dementation: "WOD20.Dementation",
+      dominate: "WOD20.Dominate",
+      flight: "WOD20.Flight",
+      fortitude: "WOD20.Fortitude",
+      melpominee: "WOD20.Melpominee",
+      mytherceria: "WOD20.Mytherceria",
+      obeah: "WOD20.Obeah",
+      obfuscate: "WOD20.Obfuscate",
+      obtenebration: "WOD20.Obtenebration",
+      potence: "WOD20.Potence",
+      presence: "WOD20.Presence",
+      protean: "WOD20.Protean",
+      quietus: "WOD20.Quietus",
+      sanguinus: "WOD20.Sanguinus",
+      serpentis: "WOD20.Serpentis",
+      spiritus: "WOD20.Spiritus",
+      temporis: "WOD20.Temporis",
+      thanatosis: "WOD20.Thanatosis",
+      valeren: "WOD20.Valeren",
+      vicissitude: "WOD20.Vicissitude",
+      visceratika: "WOD20.Visceratika",
+      thaumaturgy: "WOD20.Thaumaturgy",
+      necromancy: "WOD20.Necromancy",
+      oblivion: "WOD20.Oblivion",
+      rituals: "WOD20.Rituals",
+      ceremonies: "WOD20.Ceremonies",
       
     };
     // if (roll) {
@@ -233,7 +233,7 @@ Hooks.once("ready", async function () {
 });
 
 Hooks.once("diceSoNiceReady", (dice3d) => {
-  dice3d.addSystem({ id: "vtm5e", name: "VtM5e" }, true);
+  dice3d.addSystem({ id: "wod20", name: "WoD20" }, true);
   dice3d.addDicePreset({
     type: "dv",
     labels: [
@@ -250,7 +250,7 @@ Hooks.once("diceSoNiceReady", (dice3d) => {
     ],
     colorset: "black",
     fontScale: 0.5,
-    system: "vtm5e",
+    system: "wod20",
   });
   dice3d.addColorset(
     {
@@ -285,7 +285,7 @@ Hooks.once("diceSoNiceReady", (dice3d) => {
       "systems/wod20/assets/images/red-crit-dsn.png",
     ],
     colorset: "hunger",
-    system: "vtm5e",
+    system: "wod20",
   });
 });
 
@@ -297,7 +297,7 @@ Hooks.once("diceSoNiceReady", (dice3d) => {
 // TODO: Add condition that it only shows up on willpower-able rolls
 Hooks.on("getChatLogEntryContext", function (html, options) {
   options.push({
-    name: game.i18n.localize("VTM5E.WillpowerReroll"),
+    name: game.i18n.localize("WOD20.WillpowerReroll"),
     icon: '<i class="fas fa-redo"></i>',
     condition: (li) => {
       // Only show this context menu if the person is GM or author of the message
@@ -410,7 +410,7 @@ async function createVampireMacro(data, slot) {
   const item = data.data;
 
   // Create the macro command
-  const command = `game.vtm5e.rollItemMacro("${item.name}");`;
+  const command = `game.wod20.rollItemMacro("${item.name}");`;
   let macro = game.macros.entities.find(
     (m) => m.name === item.name && m.command === command
   );
@@ -420,7 +420,7 @@ async function createVampireMacro(data, slot) {
       type: "script",
       img: item.img,
       command: command,
-      flags: { "vtm5e.itemMacro": true },
+      flags: { "wod20.itemMacro": true },
     });
   }
   game.user.assignHotbarMacro(macro, slot);

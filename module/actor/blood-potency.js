@@ -87,92 +87,92 @@ export function getBloodPotencyText (level) {
   // TODO : Some of this could be deducted from previous array.
   const BLOOD_POTENCY_TEXT = [
     {
-      surge: game.i18n.localize('VTM5E.Add1Dice'),
-      mend: game.i18n.localize('VTM5E.1SuperficialDamage'),
-      power: game.i18n.localize('VTM5E.None'),
-      rouse: game.i18n.localize('VTM5E.None'),
+      surge: game.i18n.localize('WOD20.Add1Dice'),
+      mend: game.i18n.localize('WOD20.1SuperficialDamage'),
+      power: game.i18n.localize('WOD20.None'),
+      rouse: game.i18n.localize('WOD20.None'),
       bane: '0',
-      feeding: game.i18n.localize('VTM5E.NoEffect')
+      feeding: game.i18n.localize('WOD20.NoEffect')
     },
     {
-      surge: game.i18n.localize('VTM5E.Add2Dice'),
-      mend: game.i18n.localize('VTM5E.1SuperficialDamage'),
-      power: game.i18n.localize('VTM5E.None'),
-      rouse: game.i18n.localize('VTM5E.Level1'),
+      surge: game.i18n.localize('WOD20.Add2Dice'),
+      mend: game.i18n.localize('WOD20.1SuperficialDamage'),
+      power: game.i18n.localize('WOD20.None'),
+      rouse: game.i18n.localize('WOD20.Level1'),
       bane: '2',
-      feeding: game.i18n.localize('VTM5E.NoEffect')
+      feeding: game.i18n.localize('WOD20.NoEffect')
     },
     {
-      surge: game.i18n.localize('VTM5E.Add2Dice'),
-      mend: game.i18n.localize('VTM5E.2SuperficialDamage'),
-      power: game.i18n.localize('VTM5E.Add1Dice'),
-      rouse: game.i18n.localize('VTM5E.Level1'),
+      surge: game.i18n.localize('WOD20.Add2Dice'),
+      mend: game.i18n.localize('WOD20.2SuperficialDamage'),
+      power: game.i18n.localize('WOD20.Add1Dice'),
+      rouse: game.i18n.localize('WOD20.Level1'),
       bane: '2',
-      feeding: game.i18n.localize('VTM5E.FeedingPenalty1')
+      feeding: game.i18n.localize('WOD20.FeedingPenalty1')
     },
     {
-      surge: game.i18n.localize('VTM5E.Add3Dice'),
-      mend: game.i18n.localize('VTM5E.2SuperficialDamage'),
-      power: game.i18n.localize('VTM5E.Add1Dice'),
-      rouse: game.i18n.localize('VTM5E.Level2'),
+      surge: game.i18n.localize('WOD20.Add3Dice'),
+      mend: game.i18n.localize('WOD20.2SuperficialDamage'),
+      power: game.i18n.localize('WOD20.Add1Dice'),
+      rouse: game.i18n.localize('WOD20.Level2'),
       bane: '3',
-      feeding: game.i18n.localize('VTM5E.FeedingPenalty2')
+      feeding: game.i18n.localize('WOD20.FeedingPenalty2')
     },
     {
-      surge: game.i18n.localize('VTM5E.Add3Dice'),
-      mend: game.i18n.localize('VTM5E.3SuperficialDamage'),
-      power: game.i18n.localize('VTM5E.Add2Dice'),
-      rouse: game.i18n.localize('VTM5E.Level2'),
+      surge: game.i18n.localize('WOD20.Add3Dice'),
+      mend: game.i18n.localize('WOD20.3SuperficialDamage'),
+      power: game.i18n.localize('WOD20.Add2Dice'),
+      rouse: game.i18n.localize('WOD20.Level2'),
       bane: '3',
-      feeding: game.i18n.localize('VTM5E.FeedingPenalty3')
+      feeding: game.i18n.localize('WOD20.FeedingPenalty3')
     },
     {
-      surge: game.i18n.localize('VTM5E.Add4Dice'),
-      mend: game.i18n.localize('VTM5E.3SuperficialDamage'),
-      power: game.i18n.localize('VTM5E.Add2Dice'),
-      rouse: game.i18n.localize('VTM5E.Level3'),
+      surge: game.i18n.localize('WOD20.Add4Dice'),
+      mend: game.i18n.localize('WOD20.3SuperficialDamage'),
+      power: game.i18n.localize('WOD20.Add2Dice'),
+      rouse: game.i18n.localize('WOD20.Level3'),
       bane: '4',
-      feeding: game.i18n.localize('VTM5E.FeedingPenalty4')
+      feeding: game.i18n.localize('WOD20.FeedingPenalty4')
     },
     {
-      surge: game.i18n.localize('VTM5E.Add4Dice'),
-      mend: game.i18n.localize('VTM5E.3SuperficialDamage'),
-      power: game.i18n.localize('VTM5E.Add3Dice'),
-      rouse: game.i18n.localize('VTM5E.Level3'),
+      surge: game.i18n.localize('WOD20.Add4Dice'),
+      mend: game.i18n.localize('WOD20.3SuperficialDamage'),
+      power: game.i18n.localize('WOD20.Add3Dice'),
+      rouse: game.i18n.localize('WOD20.Level3'),
       bane: '4',
-      feeding: game.i18n.localize('VTM5E.FeedingPenalty5')
+      feeding: game.i18n.localize('WOD20.FeedingPenalty5')
     },
     {
-      surge: game.i18n.localize('VTM5E.Add5Dice'),
-      mend: game.i18n.localize('VTM5E.3SuperficialDamage'),
-      power: game.i18n.localize('VTM5E.Add3Dice'),
-      rouse: game.i18n.localize('VTM5E.Level4'),
+      surge: game.i18n.localize('WOD20.Add5Dice'),
+      mend: game.i18n.localize('WOD20.3SuperficialDamage'),
+      power: game.i18n.localize('WOD20.Add3Dice'),
+      rouse: game.i18n.localize('WOD20.Level4'),
       bane: '5',
-      feeding: game.i18n.localize('VTM5E.FeedingPenalty5')
+      feeding: game.i18n.localize('WOD20.FeedingPenalty5')
     },
     {
-      surge: game.i18n.localize('VTM5E.Add5Dice'),
-      mend: game.i18n.localize('VTM5E.4SuperficialDamage'),
-      power: game.i18n.localize('VTM5E.Add4Dice'),
-      rouse: game.i18n.localize('VTM5E.Level4'),
+      surge: game.i18n.localize('WOD20.Add5Dice'),
+      mend: game.i18n.localize('WOD20.4SuperficialDamage'),
+      power: game.i18n.localize('WOD20.Add4Dice'),
+      rouse: game.i18n.localize('WOD20.Level4'),
       bane: '5',
-      feeding: game.i18n.localize('VTM5E.FeedingPenalty6')
+      feeding: game.i18n.localize('WOD20.FeedingPenalty6')
     },
     {
-      surge: game.i18n.localize('VTM5E.Add6Dice'),
-      mend: game.i18n.localize('VTM5E.4SuperficialDamage'),
-      power: game.i18n.localize('VTM5E.Add4Dice'),
-      rouse: game.i18n.localize('VTM5E.Level5'),
+      surge: game.i18n.localize('WOD20.Add6Dice'),
+      mend: game.i18n.localize('WOD20.4SuperficialDamage'),
+      power: game.i18n.localize('WOD20.Add4Dice'),
+      rouse: game.i18n.localize('WOD20.Level5'),
       bane: '6',
-      feeding: game.i18n.localize('VTM5E.FeedingPenalty6')
+      feeding: game.i18n.localize('WOD20.FeedingPenalty6')
     },
     {
-      surge: game.i18n.localize('VTM5E.Add6Dice'),
-      mend: game.i18n.localize('VTM5E.5SuperficialDamage'),
-      power: game.i18n.localize('VTM5E.Add5Dice'),
-      rouse: game.i18n.localize('VTM5E.Level5'),
+      surge: game.i18n.localize('WOD20.Add6Dice'),
+      mend: game.i18n.localize('WOD20.5SuperficialDamage'),
+      power: game.i18n.localize('WOD20.Add5Dice'),
+      rouse: game.i18n.localize('WOD20.Level5'),
       bane: '6',
-      feeding: game.i18n.localize('VTM5E.FeedingPenalty7')
+      feeding: game.i18n.localize('WOD20.FeedingPenalty7')
     }
   ]
 

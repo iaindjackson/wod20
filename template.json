@@ -44,77 +44,77 @@
         "woundPenalties" : {
           "healthy" : {
             "value" : "healthy", 
-            "name" : "VTM5E.Healthy"
+            "name" : "WOD20.Healthy"
           },
           "bruised" : {
             "value" : "bruised", 
-            "name" : "VTM5E.Bruised"
+            "name" : "WOD20.Bruised"
           }, 
           "hurt" : {
             "value" : "hurt",
-            "name" : "VTM5E.Hurt"
+            "name" : "WOD20.Hurt"
           }, 
           "injured" : {
             "value" : "injured",
-            "name" : "VTM5E.Injured"
+            "name" : "WOD20.Injured"
           }, 
           "wounded" : {
             "value" : "wounded",
-            "name" : "VTM5E.Wounded"
+            "name" : "WOD20.Wounded"
           },
           "mauled" : {
             "value" : "mauled",
-            "name" : "VTM5E.Mauled"
+            "name" : "WOD20.Mauled"
           }, 
           "crippled" : {
             "value" : "crippled", 
-            "name" : "VTM5E.Crippled"
+            "name" : "WOD20.Crippled"
           }, 
           "incapacitated" : {
             "value" : "incapacitated", 
-            "name" : "VTM5E.Incapacitated"
+            "name" : "WOD20.Incapacitated"
           }
         }, 
         "abilities": {
           "strength": {
             "value": 1,
-            "name": "VTM5E.Strength"
+            "name": "WOD20.Strength"
           },
           "charisma": {
             "value": 1,
-            "name": "VTM5E.Charisma"
+            "name": "WOD20.Charisma"
           },
           "perception": {
             "value": 1,
-            "name": "VTM5E.Perception"
+            "name": "WOD20.Perception"
           },
           "dexterity": {
             "value": 1,
-            "name": "VTM5E.Dexterity"
+            "name": "WOD20.Dexterity"
           },
           "manipulation": {
             "value": 1,
-            "name": "VTM5E.Manipulation"
+            "name": "WOD20.Manipulation"
           },
           "wits": {
             "value": 1,
-            "name": "VTM5E.Wits"
+            "name": "WOD20.Wits"
           },
           "stamina": {
             "value": 1,
-            "name": "VTM5E.Stamina"
+            "name": "WOD20.Stamina"
           },
           "Appearance": {
             "value": 1,
-            "name": "VTM5E.Appearance"
+            "name": "WOD20.Appearance"
           },
           "intelligence": {
             "value": 1,
-            "name": "VTM5E.Intelligence"
+            "name": "WOD20.Intelligence"
           }, 
           "null" : {
             "value" : 0, 
-            "name" : "VTM5E.Null"
+            "name" : "WOD20.Null"
           }
           
         },
@@ -175,141 +175,141 @@
         "virtues": {
           "conscience": {
             "value": 1,
-            "name": "VTM5E.Conscience/Conviction"
+            "name": "WOD20.Conscience/Conviction"
           },
           "selfControl": {
             "value": 1,
-            "name": "VTM5E.Self-Control/Instinct"
+            "name": "WOD20.Self-Control/Instinct"
           },
           "courage": {
             "value": 1,
-            "name": "VTM5E.Courage"
+            "name": "WOD20.Courage"
           }
         },
         "skills": {
          
           "alertness": {
             "value": 0,
-            "name": "VTM5E.Alertness"
+            "name": "WOD20.Alertness"
           },
           "animal ken": {
             "value": 0,
-            "name": "VTM5E.AnimalKen"
+            "name": "WOD20.AnimalKen"
           },
           
            "academics": {
             "value": 0,
-            "name": "VTM5E.Academics"
+            "name": "WOD20.Academics"
           },
           "athletics": {
             "value": 0,
-            "name": "VTM5E.Athletics"
+            "name": "WOD20.Athletics"
           },
           "archery" : {
             "value " : 0, 
-            "name" : "VTM5E.Archery"
+            "name" : "WOD20.Archery"
           },
           "enigmas" : {
             "value" : 0, 
-            "name" : "VTM5E.Enigmas"
+            "name" : "WOD20.Enigmas"
           },
           "awareness": {
             "value": 0,
-            "name": "VTM5E.Awareness"
+            "name": "WOD20.Awareness"
           },
           "commerce" : {
             "value" : 0, 
-            "name" : "VTM5E.Commerce"
+            "name" : "WOD20.Commerce"
           },
           "hearthWisdom" : {
             "value" : 0, 
-            "name" : "VTM5E.HearthWisdom"
+            "name" : "WOD20.HearthWisdom"
           },
           "brawl": {
             "value": 0,
-            "name": "VTM5E.Brawl"
+            "name": "WOD20.Brawl"
           },
           "craft": {
             "value": 0,
-            "name": "VTM5E.Craft"
+            "name": "WOD20.Craft"
           },
           "investigation": {
             "value": 0,
-            "name": "VTM5E.Investigation"
+            "name": "WOD20.Investigation"
           },
           
           "empathy": {
             "value": 0,
-            "name": "VTM5E.Empathy"
+            "name": "WOD20.Empathy"
           },
          
           "etiquette": {
             "value": 0,
-            "name": "VTM5E.Etiquette"
+            "name": "WOD20.Etiquette"
           },
           "law": {
             "value": 0,
-            "name": "VTM5E.Law"
+            "name": "WOD20.Law"
           },
           "expression": {
             "value": 0,
-            "name": "VTM5E.Expression"
+            "name": "WOD20.Expression"
           },
           "melee": {
             "value": 0,
-            "name": "VTM5E.Melee"
+            "name": "WOD20.Melee"
           },
           "medicine": {
             "value": 0,
-            "name": "VTM5E.Medicine"
+            "name": "WOD20.Medicine"
           },
           "intimidation": {
             "value": 0,
-            "name": "VTM5E.Intimidation"
+            "name": "WOD20.Intimidation"
           },
           "performance": {
             "value": 0,
-            "name": "VTM5E.Performance"
+            "name": "WOD20.Performance"
           },
           "occult": {
             "value": 0,
-            "name": "VTM5E.Occult"
+            "name": "WOD20.Occult"
           },
           "leadership": {
             "value": 0,
-            "name": "VTM5E.Leadership"
+            "name": "WOD20.Leadership"
           },
           "ride" : {
             "value" : 0, 
-            "name" : "VTM5E.Ride"
+            "name" : "WOD20.Ride"
           },
           "politics": {
             "value": 0,
-            "name": "VTM5E.Politics"
+            "name": "WOD20.Politics"
           },
           "legedermain" : {
             "value" : 0, 
-            "name" : "VTM5E.Legedermain"
+            "name" : "WOD20.Legedermain"
           },
           "stealth": {
             "value": 0,
-            "name": "VTM5E.Stealth"
+            "name": "WOD20.Stealth"
           },
           "seneschal" : {
             "value" : 0, 
-            "name" : "VTM5E.Seneschal"
+            "name" : "WOD20.Seneschal"
           },
           "subterfuge": {
             "value": 0,
-            "name": "VTM5E.Subterfuge"
+            "name": "WOD20.Subterfuge"
           },
           "survival": {
             "value": 0,
-            "name": "VTM5E.Survival"
+            "name": "WOD20.Survival"
           },
           "theology" : {
             "value" : 0, 
-            "name" : "VTM5E.Theology"
+            "name" : "WOD20.Theology"
           }
         }
       },
@@ -355,77 +355,77 @@
         "woundPenalties" : {
           "healthy" : {
             "value" : "healthy", 
-            "name" : "VTM5E.Healthy"
+            "name" : "WOD20.Healthy"
           },
           "bruised" : {
             "value" : "bruised", 
-            "name" : "VTM5E.Bruised"
+            "name" : "WOD20.Bruised"
           }, 
           "hurt" : {
             "value" : "hurt",
-            "name" : "VTM5E.Hurt"
+            "name" : "WOD20.Hurt"
           }, 
           "injured" : {
             "value" : "injured",
-            "name" : "VTM5E.Injured"
+            "name" : "WOD20.Injured"
           }, 
           "wounded" : {
             "value" : "wounded",
-            "name" : "VTM5E.Wounded"
+            "name" : "WOD20.Wounded"
           },
           "mauled" : {
             "value" : "mauled",
-            "name" : "VTM5E.Mauled"
+            "name" : "WOD20.Mauled"
           }, 
           "crippled" : {
             "value" : "crippled", 
-            "name" : "VTM5E.Crippled"
+            "name" : "WOD20.Crippled"
           }, 
           "incapacitated" : {
             "value" : "incapacitated", 
-            "name" : "VTM5E.Incapacitated"
+            "name" : "WOD20.Incapacitated"
           }
         }, 
         "abilities": {
           "strength": {
             "value": 1,
-            "name": "VTM5E.Strength"
+            "name": "WOD20.Strength"
           },
           "charisma": {
             "value": 1,
-            "name": "VTM5E.Charisma"
+            "name": "WOD20.Charisma"
           },
           "perception": {
             "value": 1,
-            "name": "VTM5E.Perception"
+            "name": "WOD20.Perception"
           },
           "dexterity": {
             "value": 1,
-            "name": "VTM5E.Dexterity"
+            "name": "WOD20.Dexterity"
           },
           "manipulation": {
             "value": 1,
-            "name": "VTM5E.Manipulation"
+            "name": "WOD20.Manipulation"
           },
           "wits": {
             "value": 1,
-            "name": "VTM5E.Wits"
+            "name": "WOD20.Wits"
           },
           "stamina": {
             "value": 1,
-            "name": "VTM5E.Stamina"
+            "name": "WOD20.Stamina"
           },
           "Appearance": {
             "value": 1,
-            "name": "VTM5E.Appearance"
+            "name": "WOD20.Appearance"
           },
           "intelligence": {
             "value": 1,
-            "name": "VTM5E.Intelligence"
+            "name": "WOD20.Intelligence"
           },
           "null" : {
             "value" : 0, 
-            "name" : "VTM5E.Null"
+            "name" : "WOD20.Null"
           }
           
         },
@@ -486,338 +486,338 @@
         "virtues": {
           "conscience": {
             "value": 1,
-            "name": "VTM5E.Conscience/Conviction"
+            "name": "WOD20.Conscience/Conviction"
           },
           "selfControl": {
             "value": 1,
-            "name": "VTM5E.Self-Control/Instinct"
+            "name": "WOD20.Self-Control/Instinct"
           },
           "courage": {
             "value": 1,
-            "name": "VTM5E.Courage"
+            "name": "WOD20.Courage"
           }
         },
         "skills": {
          
           "alertness": {
             "value": 0,
-            "name": "VTM5E.Alertness"
+            "name": "WOD20.Alertness"
           },
           "animal ken": {
             "value": 0,
-            "name": "VTM5E.AnimalKen"
+            "name": "WOD20.AnimalKen"
           },
           
            "academics": {
             "value": 0,
-            "name": "VTM5E.Academics"
+            "name": "WOD20.Academics"
           },
           "athletics": {
             "value": 0,
-            "name": "VTM5E.Athletics"
+            "name": "WOD20.Athletics"
           },
           "craft": {
             "value": 0,
-            "name": "VTM5E.Craft"
+            "name": "WOD20.Craft"
           },
 
           "computer": {
             "value": 0,
-            "name": "VTM5E.Computer"
+            "name": "WOD20.Computer"
           },
 
           "awareness": {
             "value": 0,
-            "name": "VTM5E.Awareness"
+            "name": "WOD20.Awareness"
           },
           "drive": {
             "value": 0,
-            "name": "VTM5E.Drive"
+            "name": "WOD20.Drive"
           },
           "finance": {
             "value": 0,
-            "name": "VTM5E.Finance"
+            "name": "WOD20.Finance"
           },
           "brawl": {
             "value": 0,
-            "name": "VTM5E.Brawl"
+            "name": "WOD20.Brawl"
           },
          
           "etiquette": {
             "value": 0,
-            "name": "VTM5E.Etiquette"
+            "name": "WOD20.Etiquette"
           },
           "investigation": {
             "value": 0,
-            "name": "VTM5E.Investigation"
+            "name": "WOD20.Investigation"
           },
           "empathy": {
             "value": 0,
-            "name": "VTM5E.Empathy"
+            "name": "WOD20.Empathy"
           },
           "firearms": {
             "value": 0,
-            "name": "VTM5E.Firearms"
+            "name": "WOD20.Firearms"
           },
           "law": {
             "value": 0,
-            "name": "VTM5E.Law"
+            "name": "WOD20.Law"
           },
           "expression": {
             "value": 0,
-            "name": "VTM5E.Expression"
+            "name": "WOD20.Expression"
           },
           "larceny": {
             "value": 0,
-            "name": "VTM5E.Larceny"
+            "name": "WOD20.Larceny"
           },
           "medicine": {
             "value": 0,
-            "name": "VTM5E.Medicine"
+            "name": "WOD20.Medicine"
           },
           "intimidation": {
             "value": 0,
-            "name": "VTM5E.Intimidation"
+            "name": "WOD20.Intimidation"
           },
           "melee": {
             "value": 0,
-            "name": "VTM5E.Melee"
+            "name": "WOD20.Melee"
           },
           "occult": {
             "value": 0,
-            "name": "VTM5E.Occult"
+            "name": "WOD20.Occult"
           },
           "leadership": {
             "value": 0,
-            "name": "VTM5E.Leadership"
+            "name": "WOD20.Leadership"
           },
           "performance": {
             "value": 0,
-            "name": "VTM5E.Performance"
+            "name": "WOD20.Performance"
           },
           "politics": {
             "value": 0,
-            "name": "VTM5E.Politics"
+            "name": "WOD20.Politics"
           },
           "streetwise": {
             "value": 0,
-            "name": "VTM5E.Streetwise"
+            "name": "WOD20.Streetwise"
           },
           "stealth": {
             "value": 0,
-            "name": "VTM5E.Stealth"
+            "name": "WOD20.Stealth"
           },
           "Science": {
             "value": 0,
-            "name": "VTM5E.Science"
+            "name": "WOD20.Science"
           },
           "subterfuge": {
             "value": 0,
-            "name": "VTM5E.Subterfuge"
+            "name": "WOD20.Subterfuge"
           },
           "survival": {
             "value": 0,
-            "name": "VTM5E.Survival"
+            "name": "WOD20.Survival"
           },
       
           "technology": {
             "value": 0,
-            "name": "VTM5E.Technology"
+            "name": "WOD20.Technology"
           }
         }
       },
       "disciplines": {
         "disciplines": {
           "abombwe": {
-            "name": "VTM5E.Abombwe",
+            "name": "WOD20.Abombwe",
             "value": 0,
             "powers": [],
             "visible": false
           },
           "animalism": {
-            "name": "VTM5E.Animalism",
+            "name": "WOD20.Animalism",
             "value": 0,
             "powers": [],
             "visible": false
           },
           "auspex": {
-            "name": "VTM5E.Auspex",
+            "name": "WOD20.Auspex",
             "value": 0,
             "powers": [],
             "visible": false
           },
           "bardo": {
-            "name": "VTM5E.Bardo",
+            "name": "WOD20.Bardo",
             "value": 0,
             "powers": [],
             "visible": false
           },
           "celerity": {
-            "name": "VTM5E.Celerity",
+            "name": "WOD20.Celerity",
             "value": 0,
             "powers": [],
             "visible": false
           },
           "chimerstry": {
-            "name": "VTM5E.Chimerstry",
+            "name": "WOD20.Chimerstry",
             "value": 0,
             "powers": [],
             "visible": false
           },
           "daimonion": {
-            "name": "VTM5E.Daimonion",
+            "name": "WOD20.Daimonion",
             "value": 0,
             "powers": [],
             "visible": false
           },
           "dementation": {
-            "name": "VTM5E.Dementation",
+            "name": "WOD20.Dementation",
             "value": 0,
             "powers": [],
             "visible": false
           },
           "dominate": {
-            "name": "VTM5E.Dominate",
+            "name": "WOD20.Dominate",
             "value": 0,
             "powers": [],
             "visible": false
           },
           "flight": {
-            "name": "VTM5E.Flight",
+            "name": "WOD20.Flight",
             "value": 0,
             "powers": [],
             "visible": false
           },
           "fortitude": {
-            "name": "VTM5E.Fortitude",
+            "name": "WOD20.Fortitude",
             "value": 0,
             "powers": [],
             "visible": false
           },  "melpominee": {
-            "name": "VTM5E.Melpominee",
+            "name": "WOD20.Melpominee",
             "value": 0,
             "powers": [],
             "visible": false
           },
           "mytherceria": {
-            "name": "VTM5E.Mytherceria",
+            "name": "WOD20.Mytherceria",
             "value": 0,
             "powers": [],
             "visible": false
           },
           "obeah": {
-            "name": "VTM5E.Obeah",
+            "name": "WOD20.Obeah",
             "value": 0,
             "powers": [],
             "visible": false
           },
           "obfuscate": {
-            "name": "VTM5E.Obfuscate",
+            "name": "WOD20.Obfuscate",
             "value": 0,
             "powers": [],
             "visible": false
           },
           "obtenebration": {
-            "name": "VTM5E.Obtenebration",
+            "name": "WOD20.Obtenebration",
             "value": 0,
             "powers": [],
             "visible": false
           },
           "potence": {
-            "name": "VTM5E.Potence",
+            "name": "WOD20.Potence",
             "value": 0,
             "powers": [],
             "visible": false
           },
           "presence": {
-            "name": "VTM5E.Presence",
+            "name": "WOD20.Presence",
             "value": 0,
             "powers": [],
             "visible": false
           },
           "protean": {
-            "name": "VTM5E.Protean",
+            "name": "WOD20.Protean",
             "value": 0,
             "powers": [],
             "visible": false
           },
           "quietus": {
-            "name": "VTM5E.Quietus",
+            "name": "WOD20.Quietus",
             "value": 0,
             "powers": [],
             "visible": false
           },
           "sanguinus": {
-            "name": "VTM5E.Sanguinus",
+            "name": "WOD20.Sanguinus",
             "value": 0,
             "powers": [],
             "visible": false
           },
           "serpentis": {
-                    "name": "VTM5E.Serpentis",
+                    "name": "WOD20.Serpentis",
                     "value": 0,
                     "powers": [],
                     "visible": false
                   },
           "spiritus": {
-            "name": "VTM5E.Spiritus",
+            "name": "WOD20.Spiritus",
             "value": 0,
             "powers": [],
             "visible": false
           },
           "temporis": {
-            "name": "VTM5E.Temporis",
+            "name": "WOD20.Temporis",
             "value": 0,
             "powers": [],
             "visible": false
           },
           "thanatosis": {
-            "name": "VTM5E.Thanatosis",
+            "name": "WOD20.Thanatosis",
             "value": 0,
             "powers": [],
             "visible": false
           },
 
           "valeren": {
-            "name": "VTM5E.Valeren",
+            "name": "WOD20.Valeren",
             "value": 0,
             "powers": [],
             "visible": false
           },                                 
           "vicissitude": {
-            "name": "VTM5E.Vicissitude",
+            "name": "WOD20.Vicissitude",
             "value": 0,
             "powers": [],
             "visible": false
           },
           "visceratika": {
-            "name": "VTM5E.Visceratika",
+            "name": "WOD20.Visceratika",
             "value": 0,
             "powers": [],
             "visible": false
           },
           "thaumaturgy": {
-            "name": "VTM5E.Thaumaturgy",
+            "name": "WOD20.Thaumaturgy",
             "value": 0,
             "powers": [],
             "visible": false
           },
           
           "necromancy": {
-            "name": "VTM5E.Necromancy",
+            "name": "WOD20.Necromancy",
             "value": 0,
             "powers": [],
             "visible": false
           },
           
           "rituals": {
-            "name": "VTM5E.Rituals",
+            "name": "WOD20.Rituals",
             "value": 0,
             "powers": [],
             "visible": false
           },
           "ceremonies": {
-            "name": "VTM5E.Ceremonies",
+            "name": "WOD20.Ceremonies",
             "value": 0,
             "powers": [],
             "visible": false

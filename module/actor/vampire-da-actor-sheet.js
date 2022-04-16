@@ -13,7 +13,7 @@ export class VampireDarkAgesSheet extends GhoulActorSheet {
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ["vtm5e", "sheet", "actor", "vampire-da"],
+      classes: ["wod20", "sheet", "actor", "vampire-da"],
       template: "systems/wod20/templates/actor/vampire-da-sheet.html",
       width: 800,
       height: 700,
@@ -45,7 +45,7 @@ export class VampireDarkAgesSheet extends GhoulActorSheet {
   getData() {
     const data = super.getData();
     console.log(data);
-    data.sheetType = `${game.i18n.localize("VTM5E.VampireDarkAges")}`;
+    data.sheetType = `${game.i18n.localize("WOD20.VampireDarkAges")}`;
 
     // Prepare items.
     if (

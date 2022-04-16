@@ -13,7 +13,7 @@ export class MortalActorSheet extends CoterieActorSheet {
   /** @override */
   static get defaultOptions() {
     return mergeObject(super.defaultOptions, {
-      classes: ["vtm5e", "sheet", "actor", "mortal"],
+      classes: ["wod20", "sheet", "actor", "mortal"],
       template: "systems/wod20/templates/actor/mortal-sheet.html",
       width: 800,
       height: 700,
@@ -46,7 +46,7 @@ export class MortalActorSheet extends CoterieActorSheet {
   getData() {
     const data = super.getData();
     // TODO: confirm that I can finish and use this list
-    data.sheetType = `${game.i18n.localize("VTM5E.Mortal")}`;
+    data.sheetType = `${game.i18n.localize("WOD20.Mortal")}`;
 
     // Prepare items.
     if (this.actor.data.type === "mortal") {
@@ -158,12 +158,12 @@ export class MortalActorSheet extends CoterieActorSheet {
   else 
    {
     selectAbility =  `<div class="form-group">
-                      <label>${game.i18n.localize("VTM5E.SelectAbility")}</label>
+                      <label>${game.i18n.localize("WOD20.SelectAbility")}</label>
                       <select id="abilitySelect">${options}</select>
                     </div>`;
     specialty =  `<input id="specialty" type="checkbox"> Specialty </input>`
     wounded = `<div class="form-group">
-                <label>${game.i18n.localize("VTM5E.SelectWound")}</label>
+                <label>${game.i18n.localize("WOD20.SelectWound")}</label>
                 <select id="woundSelect">${healthOptions}</select>
               </div>`
   }
@@ -174,11 +174,11 @@ export class MortalActorSheet extends CoterieActorSheet {
            ` 
           
           <div class="form-group">
-              <label>${game.i18n.localize("VTM5E.Modifier")}</label>
+              <label>${game.i18n.localize("WOD20.Modifier")}</label>
               <input type="text" id="inputMod" value="0">
           </div>  
           <div class="form-group">
-              <label>${game.i18n.localize("VTM5E.Difficulty")}</label>
+              <label>${game.i18n.localize("WOD20.Difficulty")}</label>
               <input type="text" min="0" id="inputDif" value="0">
           </div>
           ` + wounded + specialty +`
@@ -189,7 +189,7 @@ export class MortalActorSheet extends CoterieActorSheet {
       
       draw: {
         icon: '<i class="fas fa-check"></i>',
-        label: game.i18n.localize("VTM5E.Roll"),
+        label: game.i18n.localize("WOD20.Roll"),
         callback: async (html) => {
           const ability = html.find("#abilitySelect")[0]?.value;
           const abilityVal = this.actor.data.data.abilities[ability]?.value;
@@ -222,13 +222,13 @@ export class MortalActorSheet extends CoterieActorSheet {
       },
       cancel: {
         icon: '<i class="fas fa-times"></i>',
-        label: game.i18n.localize("VTM5E.Cancel"),
+        label: game.i18n.localize("WOD20.Cancel"),
       },
     };
 
     new Dialog({
       
-      title: game.i18n.localize("VTM5E.Rolling") + ` ${dataset.label}...`,
+      title: game.i18n.localize("WOD20.Rolling") + ` ${dataset.label}...`,
       content: template,
       buttons: buttons,
       default: "draw",

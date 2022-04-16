@@ -1,7 +1,7 @@
 {
-  "name": "v20",
+  "name": "wod20",
   "version": "1.6.0",
-  "description": "CSS compiler for the Vampire v20 system",
+  "description": "CSS compiler for the WoD 20th Anniversary system",
   "scripts": {
     "build": "gulp",
     "compile": "gulp css",

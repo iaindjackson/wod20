@@ -13,7 +13,7 @@
           name="name"
           type="text"
           value="{{item.name}}"
-          placeholder="{{localize 'VTM5E.Name'}}"
+          placeholder="{{localize 'WOD20.Name'}}"
         />
       </h1>
     </div>
@@ -21,8 +21,8 @@
 
   {{!-- Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
-    <a class="item" data-tab="description">{{localize "VTM5E.Description"}}</a>
-    <a class="item" data-tab="attributes">{{localize "VTM5E.Attributes"}}</a>
+    <a class="item" data-tab="description">{{localize "WOD20.Description"}}</a>
+    <a class="item" data-tab="attributes">{{localize "WOD20.Attributes"}}</a>
   </nav>
 
   {{!-- Sheet Body --}}
@@ -30,15 +30,15 @@
     {{!-- Description Tab --}}
     <div class="tab" data-group="primary" data-tab="description">
       <!-- it's a bit clunky trying to break things up. Easier to implement expanding powers with just one description too-->
-      <!-- <label class="resource-label">{{localize "VTM5E.Cost"}}: </label>
+      <!-- <label class="resource-label">{{localize "WOD20.Cost"}}: </label>
             <div class="half-height">
             {{editor content=data.cost target="data.cost" button=true owner=owner editable=editable}}
             </div>
-            <label class="resource-label">{{localize "VTM5E.Duration"}}: </label>
+            <label class="resource-label">{{localize "WOD20.Duration"}}: </label>
             <div class="half-height">
             {{editor content=data.duration target="data.duration" button=true owner=owner editable=editable}}
             </div> -->
-      <!-- <label class="resource-label">{{localize "VTM5E.System"}}: </label> -->
+      <!-- <label class="resource-label">{{localize "WOD20.System"}}: </label> -->
       {{editor content=data.data.description target="data.description"
       button=true owner=owner editable=editable}}
     </div>
@@ -47,7 +47,7 @@
     <div class="tab attributes" data-group="primary" data-tab="attributes">
       {{!-- As you add new fields, add them in here! --}}
       <div class="resource grid grid-4col flex-center">
-        <label class="resource-label">{{localize "VTM5E.Discipline"}}: </label>
+        <label class="resource-label">{{localize "WOD20.Discipline"}}: </label>
         <select name="data.discipline" data-type="String">
           {{#select data.data.discipline}} {{>
           "systems/wod20/templates/item/parts/disciplines.html"}}
@@ -57,7 +57,7 @@
         <div></div>
         <div></div>
 
-        <label class="resource-label">{{localize "VTM5E.System"}}: </label>
+        <label class="resource-label">{{localize "WOD20.System"}}: </label>
         <select name="data.dice1" data-type="String">
           {{#select data.data.dice1}} {{>
           "systems/wod20/templates/item/parts/attributes.html"}}
@@ -83,7 +83,7 @@
         </select>
         {{/if}}
 
-        <label class="resource-label">{{localize "VTM5E.Rollable"}}: </label>
+        <label class="resource-label">{{localize "WOD20.Rollable"}}: </label>
         <input
           type="checkbox"
           id="data.rollable"
@@ -92,7 +92,7 @@
           data.data.rollable}}
         />
 
-        <label class="resource-label">{{localize "VTM5E.UseSkill"}}: </label>
+        <label class="resource-label">{{localize "WOD20.UseSkill"}}: </label>
         <input
           type="checkbox"
           id="data.skill"

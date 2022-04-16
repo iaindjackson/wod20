@@ -71,11 +71,11 @@ export async  function rollDice(
   if (difficulty !== 0) {
     successRoll = totalSuccess || chanceDieSuccess;
     difficultyResult = `( <span class="danger">${game.i18n.localize(
-      "VTM5E.Fail"
+      "WOD20.Fail"
     )}</span> )`;
     if (successRoll) {
       difficultyResult = `( <span class="success">${game.i18n.localize(
-        "VTM5E.Success"
+        "WOD20.Success"
       )}</span> )`;
     }
   }
@@ -86,21 +86,21 @@ export async  function rollDice(
     label =
       label +
       `<p class="roll-content result-critical">${game.i18n.localize(
-        "VTM5E.CriticalSuccess"
+        "WOD20.CriticalSuccess"
       )}</p>`;
   }
   //if (!successRoll && difficulty > 0) {
   //label =
     //  label +
       //`<p class="roll-content result-bestial">${game.i18n.localize(
-      //  "VTM5E.BestialFailure"
+      //  "WOD20.BestialFailure"
       //)}</p>`;
     //  }
   //if (!successRoll && difficulty === 0) {
     //label =
       //label +
       ///`<p class="roll-content result-bestial result-possible">${game.i18n.localize(
-      //  "VTM5E.PossibleBestialFailure"
+      //  "WOD20.PossibleBestialFailure"
       //)}</p>`;
   //}
   if ( chanceDie )  {
@@ -110,7 +110,7 @@ export async  function rollDice(
   label =
     label +
     `<p class="roll-label result-success">${game.i18n.localize(
-      "VTM5E.Successes"
+      "WOD20.Successes"
     )}: ${totalSuccess} ${difficultyResult}</p>`;
 
   roll.terms[0].results.forEach((dice) => {
