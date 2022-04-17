@@ -73,6 +73,7 @@
     </div>
     {{/each}}
   </div>
+  {{#if (hasVirtues actor.data.type)}}
   {{log 'virtue' data.data.virtues }}
   <label class="resource-label">{{localize "WOD20.Virtues"}}</label>
   <div class="skills grid grid-3col flex-group-center">
@@ -99,6 +100,7 @@
     </div>
     {{/each}}
   </div>
+  {{/if}}
   <label class="resource-label">{{localize "WOD20.Specialties"}}</label>
   <ol class="items-list flex-left">
     <li class="item flexrow item-header">

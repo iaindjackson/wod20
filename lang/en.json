@@ -8,10 +8,12 @@
   "WOD20.Coterie": "Coterie",
   "WOD20.Ghoul": "Ghoul",
   "WOD20.Mortal": "Mortal",
+  "WOD20.Wraith": "Wraith",
   "WOD20.Domitor": "Domitor",
   
   "WOD20.Darkages": "Dark Ages",
 
+  "WOD20.PowerType" : "Power Type",
 
   "WOD20.Health": "Health",
   "WOD20.Willpower": "Willpower",
@@ -245,6 +247,41 @@
   "WOD20.Rötschreck" : "Rötschreck", 
   "WOD20.ResistingRötschreck" : "Resisting Rötschreck", 
   "WOD20.ResistingFrenzy": "Resisting Frenzy", 
-  "WOD20.Healthy" : "Healthy"
+  "WOD20.Healthy" : "Healthy",
+
+  "WOD20.Corpus" : "Corpus",
+  "WOD20.Pathos" : "Pathos",
+  "WOD20.Angst" : "Angst",
+
+  "WOD20.Passion" : "Passion",
+  "WOD20.Fetter" : "Fetter",
+
+  "WOD20.Arcanoi" : "Arcanoi",
+  "WOD20.SelectArcanoi": "Select Arcanoi",
+  "WOD20.AddArcanoi": "Add Arcanoi",
+  "WOD20.Argos" : "Argos",
+  "WOD20.Castigation" : "Castigation",
+  "WOD20.Embody" : "Embody",
+  "WOD20.Fatalism" : "Fatalism",
+  "WOD20.Flux" : "Flux",
+  "WOD20.Inhabit" : "Inhabit",
+  "WOD20.Intimation" : "Intimation",
+  "WOD20.Keening" : "Keening",
+  "WOD20.Lifeweb" : "Lifeweb",
+  "WOD20.Mnemosynis" : "Mnemosynis",
+  "WOD20.Moliate" : "Moliate",
+  "WOD20.Outrage" : "Outrage",
+  "WOD20.Pandemonium" : "Pandemonium",
+  "WOD20.Phantasm" : "Phantasm",
+  "WOD20.Puppetry" : "Puppetry",
+  "WOD20.Usury" : "Usury",
+
+  "WOD20.Collogue" : "Collogue",
+  "WOD20.Contaminate" : "Contaminate",
+  "WOD20.Corruption" : "Corruption",
+  "WOD20.Maleficence" : "Maleficence",
+  "WOD20.ShroudRending" : "Shroud Rending",
+  "WOD20.Tempestos" : "Tempestos",
+  "WOD20.TempestWeaving" : "Tempest Weaving"
 
 }

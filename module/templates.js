@@ -8,6 +8,7 @@ export const preloadHandlebarsTemplates = async function () {
   // Define template paths to load
   const templatePaths = [
     // Actor Sheet Partials
+    "systems/wod20/templates/actor/parts/arcanoi.html",
     "systems/wod20/templates/actor/parts/biography.html",
     "systems/wod20/templates/actor/parts/disciplines.html",
     "systems/wod20/templates/actor/parts/exp.html",
@@ -22,12 +23,16 @@ export const preloadHandlebarsTemplates = async function () {
     "systems/wod20/templates/actor/parts/stats.html",
     "systems/wod20/templates/actor/parts/willpower.html",
     "systems/wod20/templates/actor/parts/combat.html",
+    "systems/wod20/templates/actor/parts/pathos.html",
+    "systems/wod20/templates/actor/parts/corpus.html",
 
     // Item Sheet Partials
     "systems/wod20/templates/item/parts/skills.html",
+    "systems/wod20/templates/item/parts/powertypes.html",
     "systems/wod20/templates/item/parts/disciplines.html",
     "systems/wod20/templates/item/parts/attributes.html",
     "systems/wod20/templates/item/parts/virtues.html",
+    "systems/wod20/templates/item/parts/arcanoi.html",
   ];
 
   /* Load the template parts

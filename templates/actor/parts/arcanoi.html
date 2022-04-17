@@ -1,39 +1,33 @@
-<div class="tab disciplines" data-group="primary" data-tab="disciplines">
+<div class="tab arcanoi" data-group="primary" data-tab="arcanoi">
     <ol class="items-list">
         <li class="item flexrow item-header">
             <div class="item-name">{{localize "WOD20.Name"}}</div>
             <div class="item-name">{{localize "WOD20.Level"}}</div>
             <div class="item-controls">
-                <a class="item-control discipline-create" title="{{localize 'WOD20.Add'}}">
+                <a class="item-control arcanoi-create" title="{{localize 'WOD20.Add'}}">
                     <i class="fas fa-plus"></i>
                     {{localize "WOD20.Add"}}
                 </a>
             </div>
         </li>
-        {{#each data.data.disciplines as |discipline key|}}
-        {{#if discipline.visible}}
+        {{#each data.data.arcanoi as |arcanoi key|}}
+        {{#if arcanoi.visible}}
         <li class="flexrow item-header">
-            {{#if (and (ne key "rituals") (ne key "ceremonies"))}}
-            <div class="item-name vrollable" data-roll="{{discipline.value}}" data-label="{{key}}">{{localize
-                discipline.name}}</div>
-            <div class="resource-value" data-value="{{discipline.value}}" data-name="data.disciplines.{{key}}.value">
+            <div class="item-name vrollable" data-roll="{{arcanoi.value}}" data-label="{{key}}">{{localize arcanoi.name}}</div>
+            <div class="resource-value" data-value="{{arcanoi.value}}" data-name="data.arcanoi.{{key}}.value">
                 <span class="resource-value-empty"></span>
                 {{#numLoop 5}}
                 <span class="resource-value-step" data-index="{{this}}"></span>
                 {{/numLoop}}
             </div>
-            {{else}}
-            <div class="item-name" data-roll="{{discipline.value}}" data-label="{{key}}">{{localize discipline.name}}
-            </div>
-            {{/if}}
             <div class="item-controls">
                 <a class="item-control item-create" title="{{localize 'WOD20.AddPower'}}" data-type="power"
-                    data-powertype="discipline" data-power="{{key}}"><i class="fas fa-plus"></i> {{localize "WOD20.AddPower"}}</a>
-                <a class="item-control discipline-delete" title="{{localize 'WOD20.Delete'}}"
+                    data-powertype="arcanoi" data-power="{{key}}"><i class="fas fa-plus"></i> {{localize "WOD20.AddPower"}}</a>
+                <a class="item-control arcanoi-delete" title="{{localize 'WOD20.Delete'}}"
                     data-power="{{key}}"><i class="fas fa-trash"></i></a>
             </div>
         </li>
-        {{#each (lookup ../actor.disciplines_list key) as |item id|}}
+        {{#each (lookup ../actor.arcanoi_list key) as |item id|}}
         <li class="item flexcol" data-item-id="{{item._id}}">
             <div class="flexrow">
                 {{#if item.data.rollable}}

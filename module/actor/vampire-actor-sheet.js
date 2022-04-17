@@ -87,21 +87,21 @@ export class VampireActorSheet extends GhoulActorSheet {
     //   disciplineValue = this.actor.data.data.disciplines.sorcery.value;
     // } else
 
-    if (item.data.data.discipline === "ceremonies") {
+    if (item.data.data.power === "ceremonies") {
       disciplineValue = this.actor.data.data.disciplines.oblivion.value;
     } else {
       disciplineValue =
-        this.actor.data.data.disciplines[item.data.data.discipline].value;
+        this.actor.data.data.disciplines[item.data.data.power].value;
     }
     disciplineValue += this.actor.bloodPotency.power; // Blood potency power adds dices to discipline rolls only
 
     const dice1 =
-      item.data.data.dice1 === "discipline"
+      item.data.data.dice1 === "power"
         ? disciplineValue
         : this.actor.data.data.abilities[item.data.data.dice1].value;
 
     let dice2;
-    if (item.data.data.dice2 === "discipline") {
+    if (item.data.data.dice2 === "power") {
       dice2 = disciplineValue;
     } else if (item.data.data.skill) {
       dice2 = this.actor.data.data.skills[item.data.data.dice2].value;

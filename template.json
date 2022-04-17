@@ -1,6 +1,6 @@
 {
   "Actor": {
-    "types": ["character", "vampire", "ghoul", "mortal", "coterie", "vampire-da"],
+    "types": ["character", "vampire", "ghoul", "mortal", "coterie", "vampire-da", "wraith"],
     "templates": {
       "vampire-da": {
         "biography": "",
@@ -626,6 +626,271 @@
           }
         }
       },
+      "wraith": {
+        "biography": "",
+        "equipment": "",
+        "notes": "",
+        "headers": {
+          "concept": "",
+          "chronicle": "",
+          "ambition": "",
+          "desire": "",
+          "shadow": "",
+          "life": "",
+          "death": "",
+          "regret": ""
+        },
+        "exp": {
+          "value": 0,
+          "max": 0
+        },
+        "corpus": {
+          "aggravated": 0,
+          "superficial": 0,
+          "lethal" : 0,
+          "max": 10
+        },
+        "pathos": {
+          "full": 0,
+          "max": 10
+        },
+        "willpower": {
+          "aggravated": 0,
+          "superficial": 0,
+          "max": 5
+        },
+        "woundPenalties" : {
+          "healthy" : {
+            "value" : "healthy", 
+            "name" : "WOD20.Healthy"
+          }
+        }, 
+        "abilities": {
+          "strength": {
+            "value": 1,
+            "name": "WOD20.Strength"
+          },
+          "charisma": {
+            "value": 1,
+            "name": "WOD20.Charisma"
+          },
+          "perception": {
+            "value": 1,
+            "name": "WOD20.Perception"
+          },
+          "dexterity": {
+            "value": 1,
+            "name": "WOD20.Dexterity"
+          },
+          "manipulation": {
+            "value": 1,
+            "name": "WOD20.Manipulation"
+          },
+          "wits": {
+            "value": 1,
+            "name": "WOD20.Wits"
+          },
+          "stamina": {
+            "value": 1,
+            "name": "WOD20.Stamina"
+          },
+          "Appearance": {
+            "value": 1,
+            "name": "WOD20.Appearance"
+          },
+          "intelligence": {
+            "value": 1,
+            "name": "WOD20.Intelligence"
+          },
+          "null" : {
+            "value" : 0, 
+            "name" : "WOD20.Null"
+          }
+          
+        },
+        "armor" : {
+          "class" : "", 
+          "rating" : "", 
+          "penalty" : "", 
+          "description" : ""
+        },
+        "weapons" : [
+          {
+            "attack" : "", 
+            "diff" : "", 
+            "damage" : "", 
+            "range" : "", 
+            "rate" : "", 
+            "clip": "", 
+            "conceal" : ""
+          }, 
+          {
+            "attack" : "", 
+            "diff" : "", 
+            "damage" : "", 
+            "range" : "", 
+            "rate" : "", 
+            "clip": "", 
+            "conceal" : ""
+          }, 
+          {
+            "attack" : "", 
+            "diff" : "", 
+            "damage" : "", 
+            "range" : "", 
+            "rate" : "", 
+            "clip": "", 
+            "conceal" : ""
+          }, 
+          {
+            "attack" : "", 
+            "diff" : "", 
+            "damage" : "", 
+            "range" : "", 
+            "rate" : "", 
+            "clip": "", 
+            "conceal" : ""
+          }, 
+          {
+            "attack" : "", 
+            "diff" : "", 
+            "damage" : "", 
+            "range" : "", 
+            "rate" : "", 
+            "clip": "", 
+            "conceal" : ""
+          }    
+
+        ], 
+        "skills": {
+         
+          "alertness": {
+            "value": 0,
+            "name": "WOD20.Alertness"
+          },
+          "animal ken": {
+            "value": 0,
+            "name": "WOD20.AnimalKen"
+          },
+          
+           "academics": {
+            "value": 0,
+            "name": "WOD20.Academics"
+          },
+          "athletics": {
+            "value": 0,
+            "name": "WOD20.Athletics"
+          },
+          "craft": {
+            "value": 0,
+            "name": "WOD20.Craft"
+          },
+
+          "computer": {
+            "value": 0,
+            "name": "WOD20.Computer"
+          },
+
+          "awareness": {
+            "value": 0,
+            "name": "WOD20.Awareness"
+          },
+          "drive": {
+            "value": 0,
+            "name": "WOD20.Drive"
+          },
+          "finance": {
+            "value": 0,
+            "name": "WOD20.Finance"
+          },
+          "brawl": {
+            "value": 0,
+            "name": "WOD20.Brawl"
+          },
+         
+          "etiquette": {
+            "value": 0,
+            "name": "WOD20.Etiquette"
+          },
+          "investigation": {
+            "value": 0,
+            "name": "WOD20.Investigation"
+          },
+          "empathy": {
+            "value": 0,
+            "name": "WOD20.Empathy"
+          },
+          "firearms": {
+            "value": 0,
+            "name": "WOD20.Firearms"
+          },
+          "law": {
+            "value": 0,
+            "name": "WOD20.Law"
+          },
+          "expression": {
+            "value": 0,
+            "name": "WOD20.Expression"
+          },
+          "larceny": {
+            "value": 0,
+            "name": "WOD20.Larceny"
+          },
+          "medicine": {
+            "value": 0,
+            "name": "WOD20.Medicine"
+          },
+          "intimidation": {
+            "value": 0,
+            "name": "WOD20.Intimidation"
+          },
+          "melee": {
+            "value": 0,
+            "name": "WOD20.Melee"
+          },
+          "occult": {
+            "value": 0,
+            "name": "WOD20.Occult"
+          },
+          "leadership": {
+            "value": 0,
+            "name": "WOD20.Leadership"
+          },
+          "performance": {
+            "value": 0,
+            "name": "WOD20.Performance"
+          },
+          "politics": {
+            "value": 0,
+            "name": "WOD20.Politics"
+          },
+          "streetwise": {
+            "value": 0,
+            "name": "WOD20.Streetwise"
+          },
+          "stealth": {
+            "value": 0,
+            "name": "WOD20.Stealth"
+          },
+          "Science": {
+            "value": 0,
+            "name": "WOD20.Science"
+          },
+          "subterfuge": {
+            "value": 0,
+            "name": "WOD20.Subterfuge"
+          },
+          "survival": {
+            "value": 0,
+            "name": "WOD20.Survival"
+          },
+      
+          "technology": {
+            "value": 0,
+            "name": "WOD20.Technology"
+          }
+        }
+      },
       "disciplines": {
         "disciplines": {
           "abombwe": {
@@ -823,6 +1088,154 @@
             "visible": false
           }
         }
+      },
+      "arcanoi": {
+        "arcanoi": {
+          "argos": {
+            "name": "WOD20.Argos",
+            "value": 0,
+            "powers": [],
+            "visible": false
+          },
+          "castigation": {
+            "name": "WOD20.Castigation",
+            "value": 0,
+            "powers": [],
+            "visible": false
+          },
+          "embody": {
+            "name": "WOD20.Embody",
+            "value": 0,
+            "powers": [],
+            "visible": false
+          },
+          "fatalism": {
+            "name": "WOD20.Fatalism",
+            "value": 0,
+            "powers": [],
+            "visible": false
+          },
+          "flux": {
+            "name": "WOD20.Flux",
+            "value": 0,
+            "powers": [],
+            "visible": false
+          },
+          "inhabit": {
+            "name": "WOD20.Inhabit",
+            "value": 0,
+            "powers": [],
+            "visible": false
+          },
+          "intimation": {
+            "name": "WOD20.Intimation",
+            "value": 0,
+            "powers": [],
+            "visible": false
+          },
+          "keening": {
+            "name": "WOD20.Keening",
+            "value": 0,
+            "powers": [],
+            "visible": false
+          },
+          "lifeweb": {
+            "name": "WOD20.Lifeweb",
+            "value": 0,
+            "powers": [],
+            "visible": false
+          },
+          "mnemosynis": {
+            "name": "WOD20.Mnemosynis",
+            "value": 0,
+            "powers": [],
+            "visible": false
+          },
+          "moliate": {
+            "name": "WOD20.Moliate",
+            "value": 0,
+            "powers": [],
+            "visible": false
+          },
+          "outrage": {
+            "name": "WOD20.Outrage",
+            "value": 0,
+            "powers": [],
+            "visible": false
+          },
+          "pandemonium": {
+            "name": "WOD20.Pandemonium",
+            "value": 0,
+            "powers": [],
+            "visible": false
+          },
+          "phantasm": {
+            "name": "WOD20.Phantasm",
+            "value": 0,
+            "powers": [],
+            "visible": false
+          },
+          "puppetry": {
+            "name": "WOD20.Puppetry",
+            "value": 0,
+            "powers": [],
+            "visible": false
+          },
+          "usury": {
+            "name": "WOD20.Usury",
+            "value": 0,
+            "powers": [],
+            "visible": false
+          },
+          "collogue": {
+            "name": "WOD20.Collogue",
+            "value": 0,
+            "powers": [],
+            "visible": false
+          },
+          "contaminate": {
+            "name": "WOD20.Contaminate",
+            "value": 0,
+            "powers": [],
+            "visible": false
+          },
+          "corruption": {
+            "name": "WOD20.Corruption",
+            "value": 0,
+            "powers": [],
+            "visible": false
+          },
+          "larceny": {
+            "name": "WOD20.Larceny",
+            "value": 0,
+            "powers": [],
+            "visible": false
+          },
+          "maleficence": {
+            "name": "WOD20.Maleficence",
+            "value": 0,
+            "powers": [],
+            "visible": false
+          },
+          "shroudRending" : {
+            "name": "WOD20.ShroudRending",
+            "value": 0,
+            "powers": [],
+            "visible": false
+          },
+          "tempestos": {
+            "name": "WOD20.Tempestos",
+            "value": 0,
+            "powers": [],
+            "visible": false
+          },
+          "tempestWeaving": {
+            "name": "WOD20.TempestWeaving",
+            "value": 0,
+            "powers": [],
+            "visible": false
+          }
+        }
       }
     },
 
@@ -899,6 +1312,9 @@
       "headers": {
         "concept": ""
       }
+    },
+    "wraith": {
+      "templates": ["wraith", "arcanoi"]
     }
   },
   "Item": {
@@ -915,10 +1331,11 @@
     },
     "power": {
       "templates": ["base"],
-      "discipline": "rituals",
+      "powertype": "discipline",
+      "power": "rituals",
       "duration": "",
-      "dice1": "discipline",
-      "dice2": "discipline",
+      "dice1": "power",
+      "dice2": "power",
       "cost": "",
       "rollable": false,
       "skill": false

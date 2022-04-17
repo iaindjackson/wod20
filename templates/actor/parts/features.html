@@ -46,6 +46,7 @@
             <div class="item-controls"></div>
         </li>
         {{#each actor.features as |feature key|}}
+        {{#if (hasFeature ../actor.data.type key)}}
         <li class="flexrow item-header">
             <div class="item-name">{{localize (generateFeatureLabel key)}}</div>
             <div class="item-controls">
@@ -60,7 +61,7 @@
                         alt="{{item.name}}" />
                 </div>
                 <h4 class="item-name collapsible">{{item.name}}</h4>
-                {{#if (ne key "background")}}
+                {{#if (or (eq key "merit") (eq key "flaw"))}}
                 <div class="resource-value-static" data-value="{{item.data.points}}" data-name="items.{{item._id}}">
                     {{#numLoop 5}}
                     <span class="resource-value-static-step" data-index="{{this}}"></span>
@@ -88,6 +89,7 @@
             </div>
         </li>
         {{/each}}
+        {{/if}}
         {{/each}}
     </ol>
 </div>

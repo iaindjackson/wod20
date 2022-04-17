@@ -47,22 +47,40 @@
     <div class="tab attributes" data-group="primary" data-tab="attributes">
       {{!-- As you add new fields, add them in here! --}}
       <div class="resource grid grid-4col flex-center">
-        <label class="resource-label">{{localize "WOD20.Discipline"}}: </label>
-        <select name="data.discipline" data-type="String">
-          {{#select data.data.discipline}} {{>
-          "systems/wod20/templates/item/parts/disciplines.html"}}
+        <label class="resource-label">{{localize "WOD20.PowerType"}}: </label>
+        <select name="data.powertype" data-type="String">
+          {{#select data.data.powertype}}
+          {{> "systems/wod20/templates/item/parts/powertypes.html" }}
           {{/select}}
         </select>
 
-        <div></div>
-        <div></div>
+        {{#if (eq data.data.powertype "arcanoi")}}
+          <label class="resource-label">{{localize "WOD20.Arcanoi"}}: </label>
+          <select name="data.power" data-type="String">
+            {{#select data.data.power}} 
+            {{> "systems/wod20/templates/item/parts/arcanoi.html" }}
+            {{/select}}
+          </select>
+        {{else}}
+          {{#if (eq data.data.powertype "discipline")}}
+          <label class="resource-label">{{localize "WOD20.Discipline"}}: </label>
+          <select name="data.power" data-type="String">
+            {{#select data.data.power}} 
+            {{> "systems/wod20/templates/item/parts/disciplines.html" }}
+            {{/select}}
+          </select>
+          {{else}}
+            <div></div>
+            <div></div>
+          {{/if}}
+        {{/if}}
 
         <label class="resource-label">{{localize "WOD20.System"}}: </label>
         <select name="data.dice1" data-type="String">
           {{#select data.data.dice1}} {{>
           "systems/wod20/templates/item/parts/attributes.html"}}
-          <option value="discipline">
-            {{localize (getDisciplineName item.data.data.discipline)}}
+          <option value="power">
+            {{localize (getPowerName item.data.data.power)}}
           </option>
           {{/select}}
         </select>
@@ -76,8 +94,8 @@
         <select name="data.dice2" data-type="String">
           {{#select data.data.dice2}} {{>
           "systems/wod20/templates/item/parts/attributes.html"}}
-          <option value="discipline">
-            {{localize (getDisciplineName item.data.data.discipline)}}
+          <option value="power">
+            {{localize (getPowerName item.data.data.power)}}
           </option>
           {{/select}}
         </select>

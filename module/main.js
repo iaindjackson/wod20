@@ -13,6 +13,7 @@ import { MortalActorSheet } from "./actor/mortal-actor-sheet.js";
 import { GhoulActorSheet } from "./actor/ghoul-actor-sheet.js";
 import { VampireActorSheet } from "./actor/vampire-actor-sheet.js";
 import { VampireDarkAgesSheet } from "./actor/vampire-da-actor-sheet.js";
+import { WraithActorSheet } from "./actor/wraith-actor-sheet.js";
 
 Hooks.once("init", async function () {
   console.log("Initializing Schrecknet...");
@@ -67,6 +68,11 @@ Hooks.once("init", async function () {
   Actors.registerSheet("wod20", MortalActorSheet, {
     label: "Mortal Sheet",
     types: ["mortal"],
+    makeDefault: true,
+  });
+  Actors.registerSheet("wod20", WraithActorSheet, {
+    label: "Wraith Sheet",
+    types: ["wraith"],
     makeDefault: true,
   });
   Actors.registerSheet("wod20", CoterieActorSheet, {
@@ -132,6 +138,20 @@ Hooks.once("init", async function () {
     return "WOD20.".concat(capitalize(str));
   });
 
+  Handlebars.registerHelper("hasFeature", function (type, feature) {
+    if (feature === "passion") {
+      return (type === "wraith");
+    } else if (feature === "fetter") {
+      return (type === "wraith");
+    } else {
+      return true;
+    }
+  });
+
+  Handlebars.registerHelper("hasVirtues", function (type) {
+    return !(type === "wraith");
+  });
+
   Handlebars.registerHelper("generateSkillLabel", function (str) {
     return "WOD20.".concat(
       str
@@ -178,8 +198,9 @@ Hooks.once("init", async function () {
   Handlebars.registerHelper("equal", function (a, b, label) {
     return a == b ? label : "";
   });
-  Handlebars.registerHelper("getDisciplineName", function (key, roll = false) {
-    const disciplines = {
+  Handlebars.registerHelper("getPowerName", function (key, roll = false) {
+    const powers = {
+      // Vampire Disciplines
       abombwe: "WOD20.Abombwe",
       animalism: "WOD20.Animalism",
       auspex: "WOD20.Auspex",
@@ -213,7 +234,34 @@ Hooks.once("init", async function () {
       oblivion: "WOD20.Oblivion",
       rituals: "WOD20.Rituals",
       ceremonies: "WOD20.Ceremonies",
-      
+
+      // Wraith Arcanoi
+      argos: "WOD20.Argos",
+      castigation: "WOD20.Castigation",
+      embody: "WOD20.Embody",
+      fatalism: "WOD20.Fatalism",
+      flux: "WOD20.Flux",
+      inhabit: "WOD20.Inhabit",
+      intimation: "WOD20.Intimation",
+      keening: "WOD20.Keening",
+      lifeweb: "WOD20.Lifeweb",
+      mnemosynis: "WOD20.Mnemosynis",
+      moliate: "WOD20.Moliate",
+      outrage: "WOD20.Outrage",
+      pandemonium: "WOD20.Pandemonium",
+      phantasm: "WOD20.Phantasm",
+      puppetry: "WOD20.Puppetry",
+      usury: "WOD20.Usury",
+
+      // Spectre Dark Arcanoi
+      collogue: "WOD20.Collogue",
+      contaminate: "WOD20.Contaminate",
+      corruption: "WOD20.Corruption",
+      larceny: "WOD20.Larceny",
+      maleficence: "WOD20.Maleficence",
+      shroudRending: "WOD20.ShroudRending",
+      tempestos: "WOD20.Tempestos",
+      tempestWeaving: "WOD20.TempestWeaving",
     };
     // if (roll) {
     //   // if (key === "rituals") {
@@ -223,7 +271,7 @@ Hooks.once("init", async function () {
     //     return disciplines.oblivion;
     //   }
     // }
-    return disciplines[key];
+    return powers[key];
   });
 });
 

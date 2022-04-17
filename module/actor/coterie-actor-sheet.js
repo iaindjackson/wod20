@@ -69,6 +69,8 @@ export class CoterieActorSheet extends ActorSheet {
       background: [],
       merit: [],
       flaw: [],
+      passion: [],
+      fetter: []
     };
 
     const gear = [];
@@ -271,7 +273,7 @@ export class CoterieActorSheet extends ActorSheet {
       return `${game.i18n.localize("WOD20." + data.featuretype.capitalize())}`;
     }
     if (type === "power") {
-      return `${game.i18n.localize("WOD20." + data.discipline.capitalize())}`;
+      return `${game.i18n.localize("WOD20." + data.power.capitalize())}`;
     }
     return `${game.i18n.localize("WOD20." + type.capitalize())}`;
   }

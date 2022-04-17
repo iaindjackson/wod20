@@ -1,0 +1,15 @@
+<div class="resource flex-group-center health">
+    <div class="flexrow">
+        <i class="fas fa-minus resource-control resource-minus" data-resource="corpus" data-action="minus"></i>
+        <label for="data.data.corpus" class="resource-label">{{localize "WOD20.Corpus"}}</label>
+        <i class="fas fa-plus resource-control resource-plus" data-resource="corpus" data-action="plus"></i>
+    </div>
+    <div class="resource-content flexrow flex-center flex-between">
+        <div class="resource-counter" data-states="/:superficial,x:aggravated,-:lethal"  data-max="{{data.data.corpus.max}}" 
+        data-lethal="{{data.data.corpus.lethal}}" data-superficial="{{data.data.corpus.superficial}}" data-aggravated="{{data.data.corpus.aggravated}}" data-name="data.corpus">
+            {{#numLoop data.data.corpus.max}}
+            <span class="resource-counter-step" data-index="{{this}}" data-state=""></span>
+            {{/numLoop}}
+        </div>
+    </div>
+</div>
