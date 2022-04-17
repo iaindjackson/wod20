@@ -100,13 +100,14 @@ export class MortalActorSheet extends CoterieActorSheet {
 
     this._setupDotCounters(html);
     this._setupSquareCounters(html);
+    this._setupHealthCounters(html);
 
     // Everything below here is only needed if the sheet is editable
     if (!this.options.editable) return;
 
     // Ressource squares (Health, Willpower)
     html
-      .find(".resource-counter > .resource-counter-step")
+      .find(".resource-counter .resource-counter-step")
       .click(this._onSquareCounterChange.bind(this));
     html.find(".resource-plus").click(this._onResourceChange.bind(this));
     html.find(".resource-minus").click(this._onResourceChange.bind(this));
@@ -120,7 +121,7 @@ export class MortalActorSheet extends CoterieActorSheet {
     // Rollable abilities.
     html.find(".vrollable").click(this._onRollDialog.bind(this));
   }
-  
+
   /**   * Handle clickable Vampire rolls.
    * @param {Event} event   The originating click event
    * @private
@@ -129,49 +130,47 @@ export class MortalActorSheet extends CoterieActorSheet {
     event.preventDefault();
     const element = event.currentTarget;
     const dataset = element.dataset;
-    
-  let options = "";
-  for (const [key, value] of Object.entries(this.actor.data.data.abilities)) {
+
+    let options = "";
+    for (const [key, value] of Object.entries(this.actor.data.data.abilities)) {
       options = options.concat(
         `<option value="${key}">${game.i18n.localize(value.name)}</option>`
-        );
-      }
-  let healthOptions = ""
-  for (const [key, value] of Object.entries(this.actor.data.data.woundPenalties)) {
-        healthOptions = healthOptions.concat(
-          `<option value="${key}">${game.i18n.localize(value.name)}</option>`
-          );
-  }
-  let wounded;
-  let specialty;
-  let selectAbility;
+      );
+    }
+    let healthOptions = ""
+    for (const [key, value] of Object.entries(this.actor.data.data.woundPenalties)) {
+      healthOptions = healthOptions.concat(
+        `<option value="${key}">${game.i18n.localize(value.name)}</option>`
+      );
+    }
+    let wounded;
+    let specialty;
+    let selectAbility;
 
-  //    If rolling Rötschreck, the pop up won't have any select Ability 
-  if (dataset.noability=="true") 
-   {
-    selectAbility =  ""
-    specialty =  ``
-    wounded = ""
- 
-  }
+    //    If rolling Rötschreck, the pop up won't have any select Ability 
+    if (dataset.noability == "true") {
+      selectAbility = ""
+      specialty = ``
+      wounded = ""
 
-  else 
-   {
-    selectAbility =  `<div class="form-group">
+    }
+
+    else {
+      selectAbility = `<div class="form-group">
                       <label>${game.i18n.localize("WOD20.SelectAbility")}</label>
                       <select id="abilitySelect">${options}</select>
                     </div>`;
-    specialty =  `<input id="specialty" type="checkbox"> Specialty </input>`
-    wounded = `<div class="form-group">
+      specialty = `<input id="specialty" type="checkbox"> Specialty </input>`
+      wounded = `<div class="form-group">
                 <label>${game.i18n.localize("WOD20.SelectWound")}</label>
                 <select id="woundSelect">${healthOptions}</select>
               </div>`
-  }
+    }
     const template = `
       <form>
           `
-          + selectAbility + 
-           ` 
+      + selectAbility +
+      ` 
           
           <div class="form-group">
               <label>${game.i18n.localize("WOD20.Modifier")}</label>
@@ -181,12 +180,12 @@ export class MortalActorSheet extends CoterieActorSheet {
               <label>${game.i18n.localize("WOD20.Difficulty")}</label>
               <input type="text" min="0" id="inputDif" value="0">
           </div>
-          ` + wounded + specialty +`
+          ` + wounded + specialty + `
       </form>`;
 
     let buttons = {};
     buttons = {
-      
+
       draw: {
         icon: '<i class="fas fa-check"></i>',
         label: game.i18n.localize("WOD20.Roll"),
@@ -195,25 +194,25 @@ export class MortalActorSheet extends CoterieActorSheet {
           const abilityVal = this.actor.data.data.abilities[ability]?.value;
           const abilityName = game.i18n.localize(
             this.actor.data.data.abilities[ability]?.name
-            );
+          );
           const woundPenalty = html.find("#woundSelect")[0]?.value;
           const woundPenaltyVal = this.actor.data.data.woundPenalties[woundPenalty]?.value;
           const woundName = game.i18n.localize(
             this.actor.data.data.woundPenalties[woundPenalty]?.name
-            );
+          );
           const modifier = parseInt(html.find("#inputMod")[0].value || 0);
           const difficulty = parseInt(html.find("#inputDif")[0].value || 0);
           const specialty = parseInt(html.find("#specialty")[0]?.checked || false);
-          const numDice = dataset.noability!=="true" ? abilityVal + parseInt(dataset.roll) + modifier : parseInt(dataset.roll) + modifier;
-          
+          const numDice = dataset.noability !== "true" ? abilityVal + parseInt(dataset.roll) + modifier : parseInt(dataset.roll) + modifier;
+
           rollDice(
             numDice,
             this.actor,
-            dataset.noability!=="true"
+            dataset.noability !== "true"
               ? `${dataset.label} + ${abilityName}`
               : `${dataset.label}`,
             difficulty,
-            this.hunger, 
+            this.hunger,
             specialty,
             woundPenaltyVal
           );
@@ -227,7 +226,7 @@ export class MortalActorSheet extends CoterieActorSheet {
     };
 
     new Dialog({
-      
+
       title: game.i18n.localize("WOD20.Rolling") + ` ${dataset.label}...`,
       content: template,
       buttons: buttons,
@@ -270,16 +269,196 @@ export class MortalActorSheet extends CoterieActorSheet {
     }
   }
 
+  _setupHealthCounters(html) {
+    html.find(".health-counter").each(function () {
+      const bashing = parseInt(this.dataset.bashing || 0);
+      const lethal = parseInt(this.dataset.lethal || 0);
+      const aggravated = parseInt(this.dataset.aggravated || 0);
+
+      const values = new Array(aggravated + lethal + bashing);
+
+      values.fill("*", 0, aggravated);
+      values.fill("x", aggravated, aggravated + lethal);
+      values.fill("/", aggravated + lethal, aggravated + lethal + bashing);
+
+      $(this)
+        .find(".health-counter-step")
+        .each(function () {
+          this.dataset.state = "";
+          if (this.dataset.index < values.length) {
+            this.dataset.state = values[this.dataset.index];
+          }
+        });
+    });
+
+    html.find(".health-damage").click(this._onInflictDamage.bind(this));
+    html.find(".health-heal").click(this._onHealDamage.bind(this));
+  }
+
+  _onInflictDamage(event) {
+
+    const template = `
+      <form>
+        <div class="form-group">
+          <label>${game.i18n.localize("WOD20.Type")}</label>
+          <select id="damageSelect">
+            <option value="aggravated">${game.i18n.localize("WOD20.Aggravated")}</option>
+            <option value="lethal" selected="selected">${game.i18n.localize("WOD20.Lethal")}</option>
+            <option value="bashing">${game.i18n.localize("WOD20.Bashing")}</option>
+          </select>
+        </div>          
+        <div class="form-group">
+          <label>${game.i18n.localize("WOD20.Damage")}</label>
+          <input type="text" id="damage" value="1">
+        </div>
+      </form>`;
+
+    let buttons = {};
+    buttons = {
+      draw: {
+        icon: '<i class="fas fa-check"></i>',
+        label: game.i18n.localize("WOD20.InflictDamage"),
+        callback: async (html) => {
+          const damageType = html.find("#damageSelect")[0].value;
+          const damage = parseInt(html.find("#damage")[0].value || 0);
+          this._inflictDamage(damageType, damage);
+        },
+      },
+      cancel: {
+        icon: '<i class="fas fa-times"></i>',
+        label: game.i18n.localize("WOD20.Cancel"),
+      },
+    };
+
+    new Dialog({
+      title: game.i18n.localize("WOD20.InflictDamage"),
+      content: template,
+      buttons: buttons,
+      default: "draw",
+    }).render(true);
+
+  }
+
+  _onHealDamage(event) {
+    const template = `
+      <form>
+        <div class="form-group">
+          <label>${game.i18n.localize("WOD20.Type")}</label>
+          <select id="damageSelect">
+            <option value="aggravated">${game.i18n.localize("WOD20.Aggravated")}</option>
+            <option value="lethal" selected="selected">${game.i18n.localize("WOD20.Lethal")}</option>
+            <option value="bashing">${game.i18n.localize("WOD20.Bashing")}</option>
+          </select>
+        </div>          
+        <div class="form-group">
+          <label>${game.i18n.localize("WOD20.Damage")}</label>
+          <input type="text" id="damage" value="1">
+        </div>
+      </form>`;
+
+    let buttons = {};
+    buttons = {
+      draw: {
+        icon: '<i class="fas fa-check"></i>',
+        label: game.i18n.localize("WOD20.HealDamage"),
+        callback: async (html) => {
+          const damageType = html.find("#damageSelect")[0].value;
+          const damage = parseInt(html.find("#damage")[0].value || 0);
+          this._healDamage(damageType, damage);
+        },
+      },
+      cancel: {
+        icon: '<i class="fas fa-times"></i>',
+        label: game.i18n.localize("WOD20.Cancel"),
+      },
+    };
+
+    new Dialog({
+      title: game.i18n.localize("WOD20.HealDamage"),
+      content: template,
+      buttons: buttons,
+      default: "draw",
+    }).render(true);
+  }
+
+  _inflictDamage(damageType, damage) {
+    if (damage <= 0) return;
+
+    const actorData = duplicate(this.actor);
+    const health = actorData.type === "wraith" ? actorData.data.corpus : actorData.data.health;
+
+    if (damageType === "aggravated") {
+      health.aggravated = health.aggravated + damage;
+    } else if (damageType === "lethal") {
+      health.lethal = health.lethal + damage;
+    } else if (damageType === "bashing") {
+      health.bashing = health.bashing + damage;
+    }
+
+    const total = health.aggravated + health.lethal + health.bashing;
+    const excess = {
+      aggravated: 0,
+      lethal: 0,
+      bashing: 0
+    };
+
+    // Trim out any excess damage and report it. 
+    if (total > health.max) {
+      let diff = total - health.max;
+
+      // Trim bashing damage
+      excess.bashing = Math.min(diff, health.bashing);
+      diff = diff - excess.bashing;
+      health.bashing = health.bashing - excess.bashing;
+
+      // Trim lethal damage
+      excess.lethal = Math.min(diff, health.lethal);
+      diff = diff - excess.lethal;
+      health.lethal = health.lethal - excess.lethal;
+
+      // Trim aggravated damage
+      excess.aggravated = Math.min(diff, health.aggravated);
+      diff = diff - excess.aggravated;
+      health.aggavated = health.aggavated - excess.aggravated;
+    }
+
+    // TODO - For mortals and mages, bashing will upgrade to lethal if it continues - check for excess bashing upgrading to lethal
+    // In this case aggravated is the equivalent of lethal, unlike for supers which can only be slain in a few cases of taking excess aggravated damage
+
+    // TODO - Chat message to inform damage has been inflicted with excess damage
+    this.actor.update(actorData);
+  }
+
+  _healDamage(damageType, damage) {
+
+    const actorData = duplicate(this.actor);
+    const health = actorData.type === "wraith" ? actorData.data.corpus : actorData.data.health;
+
+    if (damageType === "aggravated") {
+      health.aggravated = Math.max(health.aggravated - damage, 0);
+    } else if (damageType === "lethal") {
+      health.lethal = Math.max(health.lethal - damage, 0);
+    } else if (damageType === "bashing") {
+      health.bashing = Math.max(health.bashing - damage, 0);
+    }
+
+    // No need to check for overflow with healing
+
+    // TODO - Chat message to inform that healing has been performed
+
+    this.actor.update(actorData);
+  }
+
   _onSquareCounterChange(event) {
 
     event.preventDefault();
     const element = event.currentTarget;
     const index = Number(element.dataset.index);
     const oldState = element.dataset.state || "";
-    const parent = $(element.parentNode);
+    const parent = $(element).parents(".resource-counter");
     const data = parent[0].dataset;
     const states = parseCounterStates(data.states);
-    const fields = data.name.split(".");
+    const name = data.name;
     const steps = parent.find(".resource-counter-step");
     const humanity = data.name === "data.humanity";
     const fulls = Number(data[states["-"]]) || 0;
@@ -289,7 +468,7 @@ export class MortalActorSheet extends CoterieActorSheet {
     if (index < 0 || index > steps.length) {
       return;
     }
-  
+
     const allStates = ["", ...Object.keys(states)];
     const currentState = allStates.indexOf(oldState);
     if (currentState < 0) {
@@ -321,7 +500,11 @@ export class MortalActorSheet extends CoterieActorSheet {
       obj[k] = Number(data[k]) || 0;
       return obj;
     }, {});
-    this._assignToActorField(fields, newValue);
+
+    for (const field in newValue) {
+      this._assignToActorField(name + "." + field, newValue[field]);
+    }
+
   }
 
   _setupSquareCounters(html) {
@@ -336,14 +519,14 @@ export class MortalActorSheet extends CoterieActorSheet {
 
       const values = humanity
         ? new Array(fulls + halfs)
-        : new Array(halfs + crossed + fulls );
+        : new Array(halfs + crossed + fulls);
 
       if (humanity) {
         values.fill("-", 0, fulls);
         values.fill("/", fulls, fulls + halfs);
       } else {
         values.fill("/", 0, halfs);
-        values.fill("-", halfs, halfs + fulls )
+        values.fill("-", halfs, halfs + fulls)
         values.fill("x", halfs + fulls, halfs + fulls + crossed);
 
       }
@@ -357,8 +540,6 @@ export class MortalActorSheet extends CoterieActorSheet {
           }
         });
     });
-    
- 
   }
 
   _onResourceChange(event) {
@@ -378,7 +559,7 @@ export class MortalActorSheet extends CoterieActorSheet {
 
     if (
       actorData.data[resource].aggravated +
-        actorData.data[resource].superficial >
+      actorData.data[resource].superficial >
       actorData.data[resource].max
     ) {
       actorData.data[resource].aggravated =

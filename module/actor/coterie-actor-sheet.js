@@ -198,8 +198,7 @@ export class CoterieActorSheet extends ActorSheet {
     const dataset = element.dataset;
     const index = Number(dataset.index);
     const parent = $(element.parentNode);
-    const fieldStrings = parent[0].dataset.name;
-    const fields = fieldStrings.split(".");
+    const name = parent[0].dataset.name;
     const steps = parent.find(".resource-value-step");
 
     if (this.locked && !parent.has(".hunger-value").length) return;
@@ -214,21 +213,20 @@ export class CoterieActorSheet extends ActorSheet {
         $(this).addClass("active");
       }
     });
-    this._assignToActorField(fields, index + 1);
+    this._assignToActorField(name, index + 1);
   }
 
   _onDotCounterEmpty(event) {
     event.preventDefault();
     const element = event.currentTarget;
     const parent = $(element.parentNode);
-    const fieldStrings = parent[0].dataset.name;
-    const fields = fieldStrings.split(".");
+    const name = parent[0].dataset.name;
     const steps = parent.find(".resource-value-empty");
 
     if (this.locked && !parent.has(".hunger-value").length) return;
 
     steps.removeClass("active");
-    this._assignToActorField(fields, 0);
+    this._assignToActorField(name, 0);
   }
 
   /**
@@ -278,21 +276,26 @@ export class CoterieActorSheet extends ActorSheet {
     return `${game.i18n.localize("WOD20." + type.capitalize())}`;
   }
 
-  // There's gotta be a better way to do this but for the life of me I can't figure it out
-  _assignToActorField(fields, value) {
-    const actorData = duplicate(this.actor);
-    // update actor owned items
+  _assignToActorField(name, value) {
+    const fields = name.split(".");
+
+    // If items.{id} then update the actors items
     if (fields.length === 2 && fields[0] === "items") {
+      const actorData = duplicate(this.actor);
       for (const i of actorData.items) {
         if (fields[1] === i._id) {
           i.data.points = value;
           break;
         }
       }
+      this.actor.update(actorData);
+    // Otherwise modify the stat directly
     } else {
-      const lastField = fields.pop();
-      fields.reduce((data, field) => data[field], actorData)[lastField] = value;
+      this.actor.update({
+        [name]: value
+      })
     }
-    this.actor.update(actorData);
+    
   }
+
 }

@@ -2,9 +2,9 @@
     <label for="data.data.humanityLabel.value" class="resource-label" 
     data-label="{{localize 'WOD20.RollingRemorse'}}"><input  name="data.humanityLabel.value" value="{{data.data.humanityLabel.value}}" /></label>
     <div class="resource-content flexrow flex-center flex-between">
-        <div class="resource-counter" data-states="-:value,/:stains" data-value="{{data.data.humanity.value}}" data-stains="{{data.data.humanity.stains}}"  data-name="data.humanity">
+        <div class="resource-value" data-value="{{data.data.humanity.value}}" data-name="data.humanity.value">
             {{#numLoop 10}}
-            <span class="resource-counter-step" data-index="{{this}}" data-state=""></span>
+            <span class="resource-value-step" data-index="{{this}}" data-state=""></span>
             {{/numLoop}}
         </div>
         

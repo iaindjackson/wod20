@@ -1,15 +1,49 @@
 <div class="resource flex-group-center health">
     <div class="flexrow">
-        <i class="fas fa-minus resource-control resource-minus" data-resource="health" data-action="minus"></i>
         <label for="data.data.health" class="resource-label">{{localize "WOD20.Health"}}</label>
-        <i class="fas fa-plus resource-control resource-plus" data-resource="health" data-action="plus"></i>
     </div>
     <div class="resource-content flexrow flex-center flex-between">
-        <div class="resource-counter" data-states="/:superficial,x:aggravated,-:lethal"  data-max="{{data.data.health.max}}" 
-        data-lethal="{{data.data.health.lethal}}" data-superficial="{{data.data.health.superficial}}" data-aggravated="{{data.data.health.aggravated}}" data-name="data.health">
-            {{#numLoop data.data.health.max}}
-            <span class="resource-counter-step" data-index="{{this}}" data-state=""></span>
-            {{/numLoop}}
+        <div class="health-counter health-grid" 
+            data-max="{{data.data.health.max}}" 
+            data-lethal="{{data.data.health.lethal}}" 
+            data-bashing="{{data.data.health.bashing}}" 
+            data-aggravated="{{data.data.health.aggravated}}" data-name="data.health">
+            
+            <div class="flex-left">{{localize "WOD20.Bruised"}}</div>
+            <div></div>
+            <div><span class="health-counter-step" data-index="0" data-state=""></span></div>
+
+            <div class="flex-left">{{localize "WOD20.Hurt"}}</div>
+            <div>-1</div>
+            <div><span class="health-counter-step" data-index="1" data-state=""></span></div>
+
+            <div class="flex-left">{{localize "WOD20.Injured"}}</div>
+            <div>-1</div>
+            <div><span class="health-counter-step" data-index="2" data-state=""></span></div>
+
+            <div class="flex-left">{{localize "WOD20.Wounded"}}</div>
+            <div>-2</div>
+            <div><span class="health-counter-step" data-index="3" data-state=""></span></div>
+
+            <div class="flex-left">{{localize "WOD20.Mauled"}}</div>
+            <div>-2</div>
+            <div><span class="health-counter-step" data-index="4" data-state=""></span></div>
+
+            <div class="flex-left">{{localize "WOD20.Crippled"}}</div>
+            <div>-5</div>
+            <div><span class="health-counter-step" data-index="5" data-state=""></span></div>
+
+            <div class="flex-left">{{localize "WOD20.Incapacitated"}}</div>
+            <div></div>
+            <div><span class="health-counter-step" data-index="6" data-state=""></span></div>
+        </div>
+    </div>
+    <div class="flex-between flexrow flex-center"> 
+        <div>
+          <label for="data.data.health" class="resource-label health-heal">Heal</label>
+        </div>
+        <div>
+           <label for="data.data.health" class="resource-label health-damage">Inflict</label>
         </div>
     </div>
 </div>

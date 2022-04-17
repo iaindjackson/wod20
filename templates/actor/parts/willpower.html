@@ -1,23 +1,16 @@
 <div class="resource flex-group-center willpower">
   <div class="flexrow">
-    <i
-      class="fas fa-minus resource-control resource-minus"
-      data-resource="willpower"
-      data-action="minus"
-    ></i>
-    <label
-      for="data.data.willpower"
-      class="resource-label"
+    <label for="data.data.willpower" class="resource-label"
       data-roll="{{data.data.willpower.superficial}}"
       data-use-hunger="0"
-      data-label="{{localize 'WOD20.RollingWillpower'}}"
-      >{{localize "WOD20.Willpower"}}</label
-    >
-    <i
-      class="fas fa-plus resource-control resource-plus"
-      data-resource="willpower"
-      data-action="plus"
-    ></i>
+      data-label="{{localize 'WOD20.RollingWillpower'}}">{{localize "WOD20.Willpower"}}</label>
+  </div>
+  <div class="resource-content flexrow flex-center flex-between">
+    <div class="resource-value" data-value="{{data.data.willpower.max}}" data-name="data.willpower.max">
+      {{#numLoop 10}}
+      <span class="resource-value-step" data-index="{{this}}"></span>
+      {{/numLoop}}
+    </div>
   </div>
   <div class="resource-content flexrow flex-center flex-between">
     <div
@@ -27,7 +20,7 @@
       data-superficial="{{data.data.willpower.superficial}}"
       data-name="data.willpower"
     >
-      {{#numLoop data.data.willpower.max}}
+      {{#numLoop 10}}
       <span
         class="resource-counter-step"
         data-index="{{this}}"

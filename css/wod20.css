@@ -232,8 +232,8 @@
 
 .wod20 .sheet-header {
   -webkit-box-flex: 0;
-  -ms-flex: 0 0 270px;
-  flex: 0 0 270px;
+  -ms-flex: 0 0 350px;
+  flex: 0 0 350px;
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -252,8 +252,9 @@
 
 .wod20 .coterie-sheet .sheet-header,
 .wod20 .mortal-sheet .sheet-header,
-.wod20 .ghoul-sheet .sheet-header {
-  flex: 0 0 155px;
+.wod20 .ghoul-sheet .sheet-header,
+.wod20 .wraith-sheet .sheet-header {
+  flex: 0 0 250px;
 }
 
 .wod20 .sheet-header .profile-img-zone {
@@ -478,6 +479,53 @@
     );
 }
 
+.wod20 .health-counter .health-counter-step {
+  height: 14px;
+  width: 14px;
+  border: 1px solid black;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.wod20 .health-counter .health-counter-step[data-state="*"] {
+  background-color: #790813;
+}
+
+.wod20 .health-counter .health-counter-step[data-state="/"] {
+  background:
+    linear-gradient(
+      135deg,
+      transparent 0%,
+      transparent 43%,
+      black 45%,
+      black 55%,
+      transparent 57%,
+      transparent 100%
+    );
+}
+
+.wod20 .health-counter .health-counter-step[data-state="x"] {
+  background:
+    linear-gradient(
+      45deg,
+      transparent 0%,
+      transparent 43%,
+      black 45%,
+      black 55%,
+      transparent 57%,
+      transparent 100%
+    ),
+    linear-gradient(
+      135deg,
+      transparent 0%,
+      transparent 43%,
+      black 45%,
+      black 55%,
+      transparent 57%,
+      transparent 100%
+    );
+}
+
 .wod20 .resource-counter .resource-counter-step {
   height: 14px;
   width: 14px;
@@ -526,7 +574,8 @@
 }
 
 .wod20 .flex-group-center:not(.flexrow) .resource-value,
-.wod20 .flex-group-center:not(.flexrow) .resource-counter {
+.wod20 .flex-group-center:not(.flexrow) .resource-counter,
+.wod20 .flex-group-center:not(.flexrow) .health-counter {
   margin-top: 5px;
 }
 
@@ -536,6 +585,14 @@
 
 .wod20 .tab.arcanoi .resource-value {
   margin-top: 2px;
+}
+
+/* Health levels CSS */
+
+.health-grid {
+  display: grid;
+  grid-template-columns: 1fr 20px 20px;
+  grid-column: span 3 / span 3;
 }
 
 /* ChatMessage CSS */
