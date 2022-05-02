@@ -1,6 +1,6 @@
 {
   "Actor": {
-    "types": ["character", "vampire", "ghoul", "mortal", "coterie", "vampire-da", "wraith"],
+    "types": ["character", "vampire", "ghoul", "mortal", "coterie", "vampire-da", "wraith", "werewolf"],
     "templates": {
       "vampire-da": {
         "biography": "",
@@ -348,8 +348,7 @@
           "max": 5
         },
         "willpower": {
-          "aggravated": 0,
-          "superficial": 0,
+          "full": 5,
           "max": 5
         },
         "woundPenalties" : {
@@ -497,8 +496,7 @@
             "name": "WOD20.Courage"
           }
         },
-        "skills": {
-         
+        "skills": {         
           "alertness": {
             "value": 0,
             "name": "WOD20.Alertness"
@@ -507,7 +505,6 @@
             "value": 0,
             "name": "WOD20.AnimalKen"
           },
-          
            "academics": {
             "value": 0,
             "name": "WOD20.Academics"
@@ -520,12 +517,10 @@
             "value": 0,
             "name": "WOD20.Craft"
           },
-
           "computer": {
             "value": 0,
             "name": "WOD20.Computer"
           },
-
           "awareness": {
             "value": 0,
             "name": "WOD20.Awareness"
@@ -542,7 +537,6 @@
             "value": 0,
             "name": "WOD20.Brawl"
           },
-         
           "etiquette": {
             "value": 0,
             "name": "WOD20.Etiquette"
@@ -619,7 +613,6 @@
             "value": 0,
             "name": "WOD20.Survival"
           },
-      
           "technology": {
             "value": 0,
             "name": "WOD20.Technology"
@@ -1315,6 +1308,17 @@
     },
     "wraith": {
       "templates": ["wraith", "arcanoi"]
+    },
+    "werewolf": {
+      "templates": ["base"],
+      "rage": {
+        "max": 1,
+        "full": 1
+      },
+      "gnosis": {
+        "max": 1,
+        "full": 1
+      }
     }
   },
   "Item": {

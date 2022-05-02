@@ -14,6 +14,7 @@ import { GhoulActorSheet } from "./actor/ghoul-actor-sheet.js";
 import { VampireActorSheet } from "./actor/vampire-actor-sheet.js";
 import { VampireDarkAgesSheet } from "./actor/vampire-da-actor-sheet.js";
 import { WraithActorSheet } from "./actor/wraith-actor-sheet.js";
+import { WerewolfActorSheet } from "./actor/werewolf-actor-sheet.js";
 
 Hooks.once("init", async function () {
   console.log("Initializing Schrecknet...");
@@ -74,6 +75,11 @@ Hooks.once("init", async function () {
     label: "Wraith Sheet",
     types: ["wraith"],
     makeDefault: true,
+  });
+  Actors.registerSheet("wod20", WerewolfActorSheet, {
+    label: "Werewolf Sheet",
+    types: ["werewolf"],
+    makeDefault: true
   });
   Actors.registerSheet("wod20", CoterieActorSheet, {
     label: "Coterie Sheet",
@@ -149,7 +155,7 @@ Hooks.once("init", async function () {
   });
 
   Handlebars.registerHelper("hasVirtues", function (type) {
-    return !(type === "wraith");
+    return !(type === "wraith" || type === "werewolf");
   });
 
   Handlebars.registerHelper("generateSkillLabel", function (str) {

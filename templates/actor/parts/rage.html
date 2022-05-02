@@ -1,0 +1,34 @@
+<div class="resource flex-group-center rage">
+    <div class="flexrow">
+      <i class="fas fa-minus resource-control resource-minus" data-resource="rage" data-action="spend"></i>
+      <label for="data.data.rage" class="resource-label vrollable"
+        data-roll="{{data.data.rage.max}}"
+        data-noability="true"
+        data-label="{{localize 'WOD20.RollingRage'}}">{{localize "WOD20.Rage"}}</label>
+      <i class="fas fa-plus resource-control resource-plus" data-resource="rage" data-action="recover"></i>
+    </div>
+    <div class="resource-content flexrow flex-center flex-between">
+      <div class="resource-value" data-value="{{data.data.rage.max}}" data-name="data.rage.max">
+        {{#numLoop 10}}
+        <span class="resource-value-step" data-index="{{this}}"></span>
+        {{/numLoop}}
+      </div>
+    </div>
+    <div class="resource-content flexrow flex-center flex-between">
+      <div
+        class="resource-counter"
+        data-state="/"
+        data-max="{{data.data.rage.max}}"
+        data-full="{{data.data.rage.full}}"
+        data-resource="rage"
+      >
+        {{#numLoop 10}}
+        <span
+          class="resource-counter-step"
+          data-index="{{this}}"
+          data-state=""
+        ></span>
+        {{/numLoop}}
+      </div>
+    </div>
+  </div>

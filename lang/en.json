@@ -10,6 +10,7 @@
   "WOD20.Mortal": "Mortal",
   "WOD20.Wraith": "Wraith",
   "WOD20.Domitor": "Domitor",
+  "WOD20.Werewolf": "Werewolf",
   
   "WOD20.Darkages": "Dark Ages",
 
@@ -217,6 +218,7 @@
   "WOD20.Success": "Success!",
   "WOD20.Successes": "Successes",
   "WOD20.Fail": "Fail!",
+  "WOD20.Botch": "Botch!",
   "WOD20.MessyCritical": "Messy Critical!",
   "WOD20.BestialFailure": "Botch!",
   "WOD20.PossibleBestialFailure": "Possible Botch!",
@@ -251,6 +253,14 @@
   "WOD20.ResistingRötschreck" : "Resisting Rötschreck", 
   "WOD20.ResistingFrenzy": "Resisting Frenzy", 
   "WOD20.Healthy" : "Healthy",
+
+  "WOD20.Tribe" : "Tribe",
+  "WOD20.Auspice": "Auspice",
+  "WOD20.Rage": "Rage",
+  "WOD20.Gnosis": "Gnosis",
+
+  "WOD20.RollingRage": "Rolling Rage",
+  "WOD20.RollingGnosis": "Rolling Gnosis",
 
   "WOD20.Corpus" : "Corpus",
   "WOD20.Pathos" : "Pathos",

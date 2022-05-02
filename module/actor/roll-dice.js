@@ -5,7 +5,7 @@ export async  function rollDice(
   numDice,
   actor,
   label = "",
-  difficulty = 0,
+  difficulty = 6,
   useHunger, 
   specialty, 
   wound
@@ -30,94 +30,62 @@ export async  function rollDice(
           return 0
       }
   }
-  let chanceDie = numDice + healthModifier(wound) <= 0
-  let dice = chanceDie ? 1 : parseInt(numDice) + healthModifier(wound);
-  const roll = new Roll(dice + "dvcs>11 + " + 0 + "dhcs>11", actor.data.data);
+
+  let dice = numDice + healthModifier(wound);
+
+  if (difficulty <= 0) {
+    difficulty = 6;
+  }
+
+  const roll = new Roll(dice + "dvcs>11", actor.data.data);
   await roll.evaluate();
   let difficultyResult = "<span></span>";
   let success = 0;
-  let critSuccess = 0;
-  let hungerCritSuccess = 0;
-  let fail = 0;
-  let hungerFail = 0;
-  let hungerCritFail = 0;
-  let chanceDieSuccess = false; 
-  roll.terms[0].results.forEach((dice) => {
-    if (numDice+healthModifier(wound) <= 0 && dice.result===10)
-    { 
-      chanceDieSuccess=true
-      success++;
-    }
-    else
+  let botch = 0;
+
+  for (const dice of roll.terms[0].results) {
     if (dice.result >= difficulty) {
       if (specialty && dice.result === 10) {
-        critSuccess += 2;
-      } else
-      if (dice.result===1) {
-        success==success-1
+        success = success + 2;
+      } else {
+        success = success + 1;
       }
-      else {
-        success++;
-      }
-
-    } else {
-      fail++;
+    } else if (dice.result === 1) {
+      botch++;
     }
-  });
+  }
 
-  const totalSuccess = critSuccess + success;
+  const totalSuccess = Math.max(success - botch, 0);
 
-  let successRoll = false;
-  if (difficulty !== 0) {
-    successRoll = totalSuccess || chanceDieSuccess;
-    difficultyResult = `( <span class="danger">${game.i18n.localize(
-      "WOD20.Fail"
+  difficultyResult = `( <span class="danger">${game.i18n.localize(
+    "WOD20.Fail"
+  )}</span> )`;
+
+  if (totalSuccess > 0) {
+    difficultyResult = `( <span class="success">${game.i18n.localize(
+      "WOD20.Success"
     )}</span> )`;
-    if (successRoll) {
-      difficultyResult = `( <span class="success">${game.i18n.localize(
-        "WOD20.Success"
-      )}</span> )`;
-    }
+  }
+
+  if (success <= 0 && botch > 0) {
+    difficultyResult = `( <span class="danger">${game.i18n.localize(
+      "WOD20.Botch"
+    )}</span> )`;
   }
 
   label = `<p class="roll-label uppercase">${label}</p>`;
 
-  if (critSuccess > 0) {
-    label =
-      label +
-      `<p class="roll-content result-critical">${game.i18n.localize(
-        "WOD20.CriticalSuccess"
-      )}</p>`;
-  }
-  //if (!successRoll && difficulty > 0) {
-  //label =
-    //  label +
-      //`<p class="roll-content result-bestial">${game.i18n.localize(
-      //  "WOD20.BestialFailure"
-      //)}</p>`;
-    //  }
-  //if (!successRoll && difficulty === 0) {
-    //label =
-      //label +
-      ///`<p class="roll-content result-bestial result-possible">${game.i18n.localize(
-      //  "WOD20.PossibleBestialFailure"
-      //)}</p>`;
-  //}
-  if ( chanceDie )  {
-    label = label + 
-    `<p class="roll-content result-bestial"> Chance die </p>`;
-  }
   label =
     label +
     `<p class="roll-label result-success">${game.i18n.localize(
       "WOD20.Successes"
     )}: ${totalSuccess} ${difficultyResult}</p>`;
 
-  roll.terms[0].results.forEach((dice) => {
+  for (const dice of roll.terms[0].results) {
     label =
       label +
       `<img src="systems/wod20/assets/images/diceimg_${dice.result}.png" alt="Normal Fail" class="roll-img normal-dice" />`;
-  });
+  }
 
   label = label + "<br>";
 

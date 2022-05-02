@@ -1,11 +1,11 @@
 <div class="resource flex-group-center pathos">
     <div class="flexrow">
-        <i class="fas fa-minus resource-control resource-minus" data-resource="pathos" data-action="minus"></i>
+        <i class="fas fa-minus resource-control resource-minus" data-resource="pathos" data-action="spend"></i>
         <label for="data.data.pathos" class="resource-label">{{localize "WOD20.Pathos"}}</label>
-        <i class="fas fa-plus resource-control resource-plus" data-resource="pathos" data-action="plus"></i>
+        <i class="fas fa-plus resource-control resource-plus" data-resource="pathos" data-action="recover"></i>
     </div>
     <div class="resource-content flexrow flex-center flex-between">
-        <div class="resource-counter" data-states="x:full" data-max="{{data.data.pathos.max}}" data-full="{{data.data.pathos.full}}" data-name="data.pathos">
+        <div class="resource-counter" data-state="x" data-max="{{data.data.pathos.max}}" data-full="{{data.data.pathos.full}}" data-name="data.pathos">
             {{#numLoop data.data.pathos.max}}
             <span class="resource-counter-step" data-index="{{this}}" data-state=""></span>
             {{/numLoop}}

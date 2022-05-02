@@ -143,28 +143,27 @@ export class MortalActorSheet extends CoterieActorSheet {
         `<option value="${key}">${game.i18n.localize(value.name)}</option>`
       );
     }
-    let wounded;
+
+    let wounded = 
+    `<div class="form-group">
+      <label>${game.i18n.localize("WOD20.SelectWound")}</label>
+      <select id="woundSelect">${healthOptions}</select>
+    </div>`;
+
     let specialty;
     let selectAbility;
 
-    //    If rolling Rötschreck, the pop up won't have any select Ability 
-    if (dataset.noability == "true") {
+    // If rolling an attribute, don't pick up another attribute as well
+    if (dataset.noability === "true") {
       selectAbility = ""
       specialty = ``
-      wounded = ""
-
     }
-
     else {
       selectAbility = `<div class="form-group">
                       <label>${game.i18n.localize("WOD20.SelectAbility")}</label>
                       <select id="abilitySelect">${options}</select>
                     </div>`;
-      specialty = `<input id="specialty" type="checkbox"> Specialty </input>`
-      wounded = `<div class="form-group">
-                <label>${game.i18n.localize("WOD20.SelectWound")}</label>
-                <select id="woundSelect">${healthOptions}</select>
-              </div>`
+      specialty = `<input id="specialty" type="checkbox"> Specialty </input>`;
     }
     const template = `
       <form>
@@ -178,7 +177,7 @@ export class MortalActorSheet extends CoterieActorSheet {
           </div>  
           <div class="form-group">
               <label>${game.i18n.localize("WOD20.Difficulty")}</label>
-              <input type="text" min="0" id="inputDif" value="0">
+              <input type="text" min="0" id="inputDif" value="6">
           </div>
           ` + wounded + specialty + `
       </form>`;
@@ -209,7 +208,7 @@ export class MortalActorSheet extends CoterieActorSheet {
             numDice,
             this.actor,
             dataset.noability !== "true"
-              ? `${dataset.label} + ${abilityName}`
+              ? `${abilityName} + ${dataset.label}`
               : `${dataset.label}`,
             difficulty,
             this.hunger,
@@ -227,7 +226,7 @@ export class MortalActorSheet extends CoterieActorSheet {
 
     new Dialog({
 
-      title: game.i18n.localize("WOD20.Rolling") + ` ${dataset.label}...`,
+      title: `${dataset.label}...`,
       content: template,
       buttons: buttons,
       default: "draw",
@@ -450,86 +449,47 @@ export class MortalActorSheet extends CoterieActorSheet {
   }
 
   _onSquareCounterChange(event) {
-
     event.preventDefault();
+
+    const actorData = duplicate(this.actor);
+
     const element = event.currentTarget;
     const index = Number(element.dataset.index);
     const oldState = element.dataset.state || "";
-    const parent = $(element).parents(".resource-counter");
-    const data = parent[0].dataset;
-    const states = parseCounterStates(data.states);
-    const name = data.name;
-    const steps = parent.find(".resource-counter-step");
-    const humanity = data.name === "data.humanity";
-    const fulls = Number(data[states["-"]]) || 0;
-    const halfs = Number(data[states["/"]]) || 0;
-    const crossed = Number(data[states.x]) || 0;
-    const star = Number(data[states["*"]]) || 0;
+
+    const parents = $(element).parents(".resource-counter");
+    const parent = parents[0];
+    const dataset = parent.dataset;
+    const resource = dataset.resource;
+
+    const steps = parents.find(".resource-counter-step");
+    const max = parseInt(dataset.max || actorData[resource].max);
+
     if (index < 0 || index > steps.length) {
       return;
     }
 
-    const allStates = ["", ...Object.keys(states)];
-    const currentState = allStates.indexOf(oldState);
-    if (currentState < 0) {
-      return;
-    }
-    console.log(currentState)
-    const newState = allStates[(currentState + 1) % allStates.length];
-    steps[index].dataset.state = newState;
+    if (oldState === "") {
+      actorData.data[resource].full = Math.min(index + 1, max);
+    } else {
+      actorData.data[resource].full = Math.max(actorData.data[resource].full - 1, 0);
+    } 
 
-    if (
-      (oldState !== "" && oldState !== "-") ||
-      (oldState !== "" && humanity)
-    ) {
-      data[states[oldState]] = Number(data[states[oldState]]) - 1;
-    }
-
-    // If the step was removed we also need to subtract from the maximum.
-    if (oldState !== "" && newState === "" && !humanity) {
-      data[states["-"]] = Number(data[states["-"]]) - 1;
-    }
-
-    if (newState !== "") {
-      data[states[newState]] =
-        Number(data[states[newState]]) +
-        Math.max(index + 1 - fulls - halfs - crossed, 1);
-    }
-
-    const newValue = Object.values(states).reduce(function (obj, k) {
-      obj[k] = Number(data[k]) || 0;
-      return obj;
-    }, {});
-
-    for (const field in newValue) {
-      this._assignToActorField(name + "." + field, newValue[field]);
-    }
-
+    this.actor.update(actorData);
   }
 
   _setupSquareCounters(html) {
+    const actorData = duplicate(this.actor);
+
     html.find(".resource-counter").each(function () {
-      const data = this.dataset;
-      const states = parseCounterStates(data.states);
-      const humanity = data.name === "data.humanity";
+      const dataset = this.dataset;
+      const state = dataset.state || "/";
+      const resource = dataset.resource;
+      const max = parseInt(dataset.max || actorData.data[resource].max);
+      const full = parseInt(dataset.full || 0);
 
-      const fulls = Number(data[states["-"]]) || 0;
-      const halfs = Number(data[states["/"]]) || 0;
-      const crossed = Number(data[states.x]) || 0;
-
-      const values = humanity
-        ? new Array(fulls + halfs)
-        : new Array(halfs + crossed + fulls);
-
-      if (humanity) {
-        values.fill("-", 0, fulls);
-        values.fill("/", fulls, fulls + halfs);
-      } else {
-        values.fill("/", 0, halfs);
-        values.fill("-", halfs, halfs + fulls)
-        values.fill("x", halfs + fulls, halfs + fulls + crossed);
-
-      }
+      const values = new Array(full);
+      values.fill(state, 0, full);
 
       $(this)
         .find(".resource-counter-step")
@@ -548,35 +508,18 @@ export class MortalActorSheet extends CoterieActorSheet {
     const element = event.currentTarget;
     const dataset = element.dataset;
     const resource = dataset.resource;
-    if (dataset.action === "plus") {
-      actorData.data[resource].max++;
-    } else if (dataset.action === "minus") {
-      actorData.data[resource].max = Math.max(
-        actorData.data[resource].max - 1,
-        0
-      );
+    const max = parseInt(dataset.max || actorData.data[resource].max);
+
+    if (dataset.action === "spend") {
+      actorData.data[resource].full = Math.max(actorData.data[resource].full - 1, 0);
+    } else if (dataset.action === "recover") {
+      actorData.data[resource].full = Math.min(actorData.data[resource].full + 1, max);
+    } else {
+      return;
     }
 
-    if (
-      actorData.data[resource].aggravated +
-      actorData.data[resource].superficial >
-      actorData.data[resource].max
-    ) {
-      actorData.data[resource].aggravated =
-        actorData.data[resource].max - actorData.data[resource].superficial;
-      if (actorData.data[resource].aggravated <= 0) {
-        actorData.data[resource].aggravated = 0;
-        actorData.data[resource].superficial = actorData.data[resource].max;
-      }
-    }
+    // TODO - Chat message
+
     this.actor.update(actorData);
   }
-}
-
-function parseCounterStates(states) {
-  return states.split(",").reduce((obj, state) => {
-    const [k, v] = state.split(":");
-    obj[k] = v;
-    return obj;
-  }, {});
 }

@@ -1,0 +1,34 @@
+<div class="resource flex-group-center gnosis">
+    <div class="flexrow">
+      <i class="fas fa-minus resource-control resource-minus" data-resource="gnosis" data-action="spend"></i>
+      <label for="data.data.gnosis" class="resource-label vrollable"
+        data-roll="{{data.data.gnosis.max}}"
+        data-noability="true"
+        data-label="{{localize 'WOD20.RollingGnosis'}}">{{localize "WOD20.Gnosis"}}</label>
+      <i class="fas fa-plus resource-control resource-plus" data-resource="gnosis" data-action="recover"></i>
+    </div>
+    <div class="resource-content flexrow flex-center flex-between">
+      <div class="resource-value" data-value="{{data.data.gnosis.max}}" data-name="data.gnosis.max">
+        {{#numLoop 10}}
+        <span class="resource-value-step" data-index="{{this}}"></span>
+        {{/numLoop}}
+      </div>
+    </div>
+    <div class="resource-content flexrow flex-center flex-between">
+      <div
+        class="resource-counter"
+        data-state="/"
+        data-max="{{data.data.gnosis.max}}"
+        data-full="{{data.data.gnosis.full}}"
+        data-resource="gnosis"
+      >
+        {{#numLoop 10}}
+        <span
+          class="resource-counter-step"
+          data-index="{{this}}"
+          data-state=""
+        ></span>
+        {{/numLoop}}
+      </div>
+    </div>
+  </div>
