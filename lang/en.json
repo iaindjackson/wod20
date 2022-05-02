@@ -100,6 +100,7 @@
   "WOD20.Archery" : "Archery",
   "WOD20.Commerce" : "Commerce",
   "WOD20.Enigmas" : "Enigmas",
+  "WOD20.PrimalUrge" : "Primal Urge",
   "WOD20.Specialties": "Specialties",
   "WOD20.Specialty": "Specialty",
   "WOD20.Skill": "Skill",
@@ -258,6 +259,11 @@
   "WOD20.Auspice": "Auspice",
   "WOD20.Rage": "Rage",
   "WOD20.Gnosis": "Gnosis",
+
+  "WOD20.Gifts": "Gifts",
+  "WOD20.Gift": "Gift",
+  "WOD20.Rites": "Rites",
+  "WOD20.Rite": "Rite",
 
   "WOD20.RollingRage": "Rolling Rage",
   "WOD20.RollingGnosis": "Rolling Gnosis",

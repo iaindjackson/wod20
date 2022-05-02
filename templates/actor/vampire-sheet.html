@@ -58,9 +58,8 @@
   {{!-- Vampire Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
     <a class="item" data-tab="stats">{{localize "WOD20.Stats"}}</a>
-    <a class="item" data-tab="disciplines">{{localize "WOD20.Disciplines"}}</a>
     <a class="item" data-tab="features">{{localize "WOD20.Features"}}</a>
-
+    <a class="item" data-tab="disciplines">{{localize "WOD20.Disciplines"}}</a>
     <a class="item" data-tab="description">{{localize "WOD20.Description"}}</a>
     <a class="item" data-tab="combat">{{localize "WOD20.Combat"}}</a>
     <a class="item" data-tab="other">{{localize "WOD20.Other"}}</a>
@@ -70,11 +69,10 @@
   <section class="sheet-body">
     {{!-- Stats Tab --}} 
     {{> "systems/wod20/templates/actor/parts/stats.html"}} 
-    {{!-- Owned Powers Tab --}} 
-    {{> "systems/wod20/templates/actor/parts/disciplines.html"}}
     {{!-- Owned Features Tab --}} 
     {{> "systems/wod20/templates/actor/parts/features.html" }} 
-    {{!-- Blood Tab --}}
+    {{!-- Owned Powers Tab --}} 
+    {{> "systems/wod20/templates/actor/parts/disciplines.html"}}
     {{!-- Biography Tab --}} 
     {{> "systems/wod20/templates/actor/parts/biography.html" }}
     {{! -- Combat --}} 

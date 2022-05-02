@@ -213,7 +213,12 @@ export class GhoulActorSheet extends MortalActorSheet {
       dice2 = this.actor.data.data.abilities[item.data.data.dice2].value;
     }
 
+    const difficulty = 6;
+    if (item.data.data.diff > 0) {
+      difficulty = item.data.data.diff;
+    }
+
     const dicePool = dice1 + dice2;
-    rollDice(dicePool, this.actor, `${item.data.name}`, 0, this.hunger);
+    rollDice(dicePool, this.actor, `${item.data.name}`, difficulty, this.hunger);
   }
 }

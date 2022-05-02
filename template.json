@@ -1342,7 +1342,8 @@
       "dice2": "power",
       "cost": "",
       "rollable": false,
-      "skill": false
+      "skill": false,
+      "diff": 6
     },
     "specialty": {
       "templates": ["base"],

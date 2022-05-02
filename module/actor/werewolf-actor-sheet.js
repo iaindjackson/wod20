@@ -65,6 +65,26 @@ export class WerewolfActorSheet extends MortalActorSheet {
    */
   _prepareItems(sheetData) {
     super._prepareItems(sheetData);
+    const actorData = sheetData.actor;
+
+    const gifts = [];
+    const rites = [];
+
+    // Iterate through items, allocating to containers
+    for (const i of sheetData.items) {
+      if (i.type === "power") {
+        // Append to Gifts
+        if (i.data.powertype === "gift") {
+            gifts.push(i);
+        } else if (i.data.powertype === "rite") {
+            rites.push(i);
+        }
+      }
+    }
+
+    // Assign and return
+    actorData.gifts_list = gifts;
+    actorData.rites_list = rites;
   }
-  
+
 }
