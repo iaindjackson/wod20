@@ -34,7 +34,7 @@
 
         "bloodpool": {
           "full": 0,
-          "max": 5
+          "max": 10
         },
         "willpower": {
           "aggravated": 0,
@@ -1318,6 +1318,26 @@
       "gnosis": {
         "max": 1,
         "full": 1
+      },
+      "renown": {
+        "glory": {
+          "name": "WOD20.Glory",
+          "value": 1,
+          "full": 0,
+          "max": 10
+        },
+        "honor": {
+          "name": "WOD20.Honor",
+          "value": 1,
+          "full": 0,
+          "max": 10
+        },
+        "wisdom": {
+          "name": "WOD20.Wisdom",
+          "value": 1,
+          "full": 0,
+          "max": 10
+        }
       }
     }
   },

@@ -54,9 +54,10 @@
   {{!-- Werewolf Sheet Tab Navigation --}}
   <nav class="sheet-tabs tabs" data-group="primary">
     <a class="item" data-tab="stats">{{localize "WOD20.Stats"}}</a>
+    <a class="item" data-tab="features">{{localize "WOD20.Features"}}</a>    
     <a class="item" data-tab="gifts">{{localize "WOD20.Gifts"}}</a>
     <a class="item" data-tab="rites">{{localize "WOD20.Rites"}}</a>
-    <a class="item" data-tab="features">{{localize "WOD20.Features"}}</a>
+    <a class="item" data-tab="renown">{{localize "WOD20.Renown"}}</a>
     <a class="item" data-tab="description">{{localize "WOD20.Description"}}</a>
     <a class="item" data-tab="combat">{{localize "WOD20.Combat"}}</a>
     <a class="item" data-tab="other">{{localize "WOD20.Other"}}</a>
@@ -72,6 +73,8 @@
     {{> "systems/wod20/templates/actor/parts/gifts.html"}}
     {{!-- Rites Tab --}}
     {{> "systems/wod20/templates/actor/parts/rites.html"}}
+    {{!-- Renown Tab --}}
+    {{> "systems/wod20/templates/actor/parts/renown.html"}}
     {{!-- Biography Tab --}} 
     {{> "systems/wod20/templates/actor/parts/biography.html" }}
     {{! -- Combat --}} 

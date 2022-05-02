@@ -465,14 +465,19 @@ export class MortalActorSheet extends CoterieActorSheet {
     const steps = parents.find(".resource-counter-step");
     const max = parseInt(dataset.max || actorData[resource].max);
 
+    let resourceData = actorData.data;
+    for (const r of resource.split('.')) {
+      resourceData = resourceData[r];
+    }
+
     if (index < 0 || index > steps.length) {
       return;
     }
 
     if (oldState === "") {
-      actorData.data[resource].full = Math.min(index + 1, max);
+      resourceData.full = Math.min(index + 1, max);
     } else {
-      actorData.data[resource].full = Math.max(actorData.data[resource].full - 1, 0);
+      resourceData.full = Math.max(resourceData.full - 1, 0);
     } 
 
     this.actor.update(actorData);
@@ -510,10 +515,15 @@ export class MortalActorSheet extends CoterieActorSheet {
     const resource = dataset.resource;
     const max = parseInt(dataset.max || actorData.data[resource].max);
 
+    let resourceData = actorData.data;
+    for (const r of resource.split('.')) {
+      resourceData = resourceData[r];
+    }
+
     if (dataset.action === "spend") {
-      actorData.data[resource].full = Math.max(actorData.data[resource].full - 1, 0);
+      resourceData.full = Math.max(resourceData.full - 1, 0);
     } else if (dataset.action === "recover") {
-      actorData.data[resource].full = Math.min(actorData.data[resource].full + 1, max);
+      resourceData.full = Math.min(resourceData.full + 1, max);
     } else {
       return;
     }

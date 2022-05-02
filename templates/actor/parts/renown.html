@@ -1,0 +1,37 @@
+<div class="tab" data-group="primary" data-tab="renown">
+    <div class="grid grid-3col">
+        {{#each data.data.renown as |renown key|}}
+        <div class="resource flex-group-center">
+        <div class="flexrow">
+            <i class="fas fa-minus resource-control resource-minus" data-resource="renown.{{key}}" data-action="spend" data-max="10"></i>
+            <label for="renown.{{key}}.name" class="resource-label" >{{localize renown.name}}</label>
+            <i class="fas fa-plus resource-control resource-plus" data-resource="renown.{{key}}" data-action="recover" data-max="10"></i>
+        </div>
+          <div class="resource-content flexrow flex-center flex-between">
+            <div class="resource-value" data-value="{{renown.value}}" data-name="data.renown.{{key}}.value">
+              {{#numLoop 10}}
+              <span class="resource-value-step" data-index="{{this}}"></span>
+              {{/numLoop}}
+            </div>
+          </div>
+          <div class="resource-content flexrow flex-center flex-between">
+            <div
+              class="resource-counter"
+              data-state="/"
+              data-max="{{renown.max}}"
+              data-full="{{renown.full}}"
+              data-resource="renown.{{key}}"
+            >
+              {{#numLoop 10}}
+              <span
+                class="resource-counter-step"
+                data-index="{{this}}"
+                data-state=""
+              ></span>
+              {{/numLoop}}
+            </div>
+          </div>
+          </div>
+        {{/each}}
+    </div>
+</div>

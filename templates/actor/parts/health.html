@@ -1,6 +1,8 @@
 <div class="resource flex-group-center health">
     <div class="flexrow">
+        <i class="fas fa-minus resource-control health-heal"></i>
         <label for="data.data.health" class="resource-label">{{localize "WOD20.Health"}}</label>
+        <i class="fas fa-plus resource-control health-damage"></i>
     </div>
     <div class="resource-content flexrow flex-center flex-between">
         <div class="health-counter health-grid" 
@@ -36,14 +38,6 @@
             <div class="flex-left">{{localize "WOD20.Incapacitated"}}</div>
             <div></div>
             <div><span class="health-counter-step" data-index="6" data-state=""></span></div>
-        </div>
-    </div>
-    <div class="flex-between flexrow flex-center"> 
-        <div>
-          <label for="data.data.health" class="resource-label health-heal">Heal</label>
-        </div>
-        <div>
-           <label for="data.data.health" class="resource-label health-damage">Inflict</label>
         </div>
     </div>
 </div>

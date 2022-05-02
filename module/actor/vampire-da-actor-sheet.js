@@ -87,7 +87,7 @@ export class VampireDarkAgesSheet extends GhoulActorSheet {
     //   disciplineValue = this.actor.data.data.disciplines.sorcery.value;
     // } else
 
-    if (item.data.data.discipline === "ceremonies") {
+    if (item.data.data.power === "ceremonies") {
       disciplineValue = this.actor.data.data.disciplines.oblivion.value;
     } else {
       disciplineValue =

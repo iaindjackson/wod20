@@ -29,6 +29,7 @@ export const preloadHandlebarsTemplates = async function () {
     "systems/wod20/templates/actor/parts/rage.html",
     "systems/wod20/templates/actor/parts/gifts.html",
     "systems/wod20/templates/actor/parts/rites.html",
+    "systems/wod20/templates/actor/parts/renown.html",
 
     // Item Sheet Partials
     "systems/wod20/templates/item/parts/skills.html",

@@ -1,6 +1,8 @@
 <div class="resource flex-group-center health">
     <div class="flexrow">
+      <i class="fas fa-minus resource-control health-heal"></i>
         <label for="data.data.corpus" class="resource-label">{{localize "WOD20.Corpus"}}</label>
+        <i class="fas fa-plus resource-control health-damage"></i>
     </div>
     <div class="resource-content flexrow flex-center flex-between">
         <div class="resource-value" data-value="{{data.data.corpus.max}}" data-name="data.corpus.max">
@@ -14,14 +16,6 @@
             {{#numLoop data.data.corpus.max}}
             <span class="health-counter-step" data-index="{{this}}" data-state=""></span>
             {{/numLoop}}
-        </div>
-    </div>
-    <div class="flex-between flexrow flex-center"> 
-        <div>
-          <label for="data.data.corpus" class="resource-label health-heal">Heal</label>
-        </div>
-        <div>
-           <label for="data.data.corpus" class="resource-label health-damage">Inflict</label>
         </div>
     </div>
 </div>

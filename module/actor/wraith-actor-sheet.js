@@ -94,7 +94,6 @@ export class WraithActorSheet extends MortalActorSheet {
       if (i.type === "power") {
         // Append to arcanoi.
         if (i.data.powertype === "arcanoi" && i.data.power !== undefined) {
-          console.log("that's the arcanoi", i.data.power);
           if (i.data.power in arcanoi) {
             arcanoi[i.data.power].push(i);
             if (!this.actor.data.data.arcanoi[i.data.power].visible) {
